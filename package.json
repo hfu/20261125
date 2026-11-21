@@ -1,0 +1,11 @@
+{
+  "name": "jica-un-open-gis-2026-deck",
+  "private": true,
+  "description": "Generator for the JICA UN Open GIS Initiative lecture deck (2026-11-25)",
+  "scripts": {
+    "build": "node src/build.js && node src/plan.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "^3.12.0"
+  }
+}
