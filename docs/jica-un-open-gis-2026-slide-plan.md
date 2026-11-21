@@ -15,7 +15,7 @@
 | 第3コマ Test（15:30–16:30） | 12 | 57 |
 | 付録（構造版のみ。最終版では削除） | 1 | 0 |
 
-status内訳: ready 22 / placeholder 6 / open 4
+status内訳: ready 23 / placeholder 5 / open 4
 
 想定発話時間は各コマの60分に対し、第1コマ約50分＋質疑バッファ約10分、第2コマ約55分＋バッファ約5分、第3コマ約57分＋バッファ約3分。第1コマと第3コマの配分は、KCAIMの各コマのムーブメント時間に合わせた。
 
@@ -298,9 +298,9 @@ status内訳: ready 22 / placeholder 6 / open 4
 - key message: A Raspberry Pi is a temporary laboratory. Find your device.
 - 視覚処理: 研修機11台の表（Device ID、Participant、IP address）とフリートの要点、公開ダッシュボードのURL。
 - 想定発話時間: 約2分
-- 講師ノート要旨: 列はDevice ID・Country（国名のみ、国旗なし）・IP。Countryは仮割当（Issue #976の9か国をアルファベット順に配置、hfu未確認）。m326・m353は予備機。IP列は、運用調査（2026-11-20）で実機の値を確認済み（8月から変化なし）。m326とm353は教材（~/jica_scripts）が未投入。IPをこの資料に残すかはレビューで判断（2026-11-19）。講師専用機・未参加機は載せない。
-- 根拠・出典: m3xxフリートの案内（hfu提供、2026-11-12、volatile）/ ホスト名の掲載: hfu承認（2026-11-12）/ 割当: open
-- status: placeholder
+- 講師ノート要旨: 列はDevice ID・Country（国名のみ、国旗なし）・IP。Countryの割当はIssue #976の9か国をアルファベット順に配置したもので、hfu確認済み（2026-11-21）。m326・m353は予備機。IP列は、運用調査（2026-11-20）で実機の値を確認済み（8月から変化なし）。m326とm353は教材（~/jica_scripts）が未投入。IPをこの資料に残すかはレビューで判断（2026-11-19）。講師専用機・未参加機は載せない。
+- 根拠・出典: m3xxフリートの案内（hfu提供、2026-11-12、volatile）/ ホスト名の掲載: hfu承認（2026-11-12）/ 割当: hfu確認（2026-11-21）
+- status: ready
 
 ### 26. Five small words
 

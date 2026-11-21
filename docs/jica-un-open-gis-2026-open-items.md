@@ -14,7 +14,7 @@
 - Wi-Fiパスワードは共有デッキに残す（スライド21の「REVIEW BEFORE SHARING」タグは外した）。
 - Windows名前解決の確認は当日。ゲストSSID・有線LANは未試験のまま了承。
 - Issue #976 には9か国（フィジー、ガボン、ラオス、ナイジェリア、パプアニューギニア、ルワンダ、シエラレオネ、東ティモール、トーゴ）のみで、個人名のメンバーリストは無かった。
-- 作業上の仮割当（要確認）: 国名の英語アルファベット順に、m327→Fiji、m328→Gabon、m332→Laos、m334→Nigeria、m336→Papua New Guinea、m347→Rwanda、m348→Sierra Leone、m349→Timor-Leste、m355→Togo。予備は m326、m353。スライド25に反映済み（タグ「CONFIRM ASSIGNMENT」）。変更したい場合は割当を指示してください。
+- 割当（2026-11-21 hfu確認済み、タグ「CONFIRM ASSIGNMENT」は外した）: 国名の英語アルファベット順に、m327→Fiji、m328→Gabon、m332→Laos、m334→Nigeria、m336→Papua New Guinea、m347→Rwanda、m348→Sierra Leone、m349→Timor-Leste、m355→Togo。予備は m326、m353。スライド25に反映済み。
 - 予備機への教材投入の依頼文: `jica-un-open-gis-2026-ops-request-spares.md`。
 - 下の項目2、3、4、5は、上の決定で解決済み。項目1（メンバーリスト）は未解決。
 

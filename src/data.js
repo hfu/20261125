@@ -464,8 +464,7 @@ add({
 });
 
 add({
-  session: 3, kind: "devices", status: "placeholder", time: 2,
-  tag: "CONFIRM ASSIGNMENT",
+  session: 3, kind: "devices", status: "ready", time: 2,
   title: "Your temporary laboratory",
   data: {
     devices: ["m326", "m327", "m328", "m332", "m334", "m336", "m347", "m348", "m349", "m353", "m355"],
@@ -481,10 +480,10 @@ add({
   say: "These Raspberry Pis are a temporary laboratory. Their value is not ownership. Their value is that everyone can connect, test, break, observe and rebuild in the same environment. There are eleven training devices. Each one has a name, such as m326. Please find your name on this list. That is your device for today and tomorrow. The devices run Debian 13. Their status is checked about every two hours, and you can see it on a public dashboard.",
   purpose: "Frame the Raspberry Pi as a shared temporary laboratory, and give each participant a device ID.",
   transition: "To connect to your device, you need five small words.",
-  evidence: "Fleet guide provided by hfu on 2026-11-12 (volatile): 11 training devices and their host names, Debian GNU/Linux 13 (trixie) on arm64, regular updates, status collected about every two hours. Host names as device IDs on slides: approved by hfu on 2026-11-12. Participant-to-device assignment: working proposal by Claude on 2026-11-20 (the 9 countries from UNopenGIS/7 issue 976, in English alphabetical order, onto the 9 non-spare devices); not yet confirmed by hfu. m326 and m353 are spares (decided by hfu on 2026-11-20). IP addresses: confirmed on the live devices by the ops survey of 2026-11-20 (unchanged since 2026-08-20, also after the 2026-11-08 reboot). They are likely DHCP reservations on the router; not confirmed. m326 and m353 have no ~/jica_scripts (same as 2026-08-20). Numbers not rechecked against the dashboard from the build environment. Temporary-laboratory framing: KCAIM /decision-support/rpi-use-model (derived).",
+  evidence: "Fleet guide provided by hfu on 2026-11-12 (volatile): 11 training devices and their host names, Debian GNU/Linux 13 (trixie) on arm64, regular updates, status collected about every two hours. Host names as device IDs on slides: approved by hfu on 2026-11-12. Country-to-device assignment: the 9 countries from UNopenGIS/7 issue 976 in English alphabetical order onto the 9 non-spare devices (proposed in the ops session on 2026-11-20, matches the posted comment on issue 976); confirmed by hfu on 2026-11-21. m326 and m353 are spares (decided by hfu on 2026-11-20). IP addresses: confirmed on the live devices by the ops survey of 2026-11-20 (unchanged since 2026-08-20, also after the 2026-11-08 reboot). They are likely DHCP reservations on the router; not confirmed. m326 and m353 have no ~/jica_scripts (same as 2026-08-20). Numbers not rechecked against the dashboard from the build environment. Temporary-laboratory framing: KCAIM /decision-support/rpi-use-model (derived).",
   caution: "List only the training devices. Do not list the lecturer and management devices, or devices that are not ready. Do not show MAC addresses, the management route, or the password. hfu asked on 2026-11-19 for a list of device ID, country flag and IP address. The KCAIM security rule keeps live IP addresses out of a public deck, so decide at review whether the IP column stays in the shared file or only in the classroom copy. Recheck the IP addresses once more on the day. Guest SSIDs and wired LANs were not tested.",
-  ja: { purpose: "RPiを「一時的な共有実験室」と位置づけ、各研修員にdevice ID（ホスト名）を示す。", key: "A Raspberry Pi is a temporary laboratory. Find your device.", visual: "研修機11台の表（Device ID、Participant、IP address）とフリートの要点、公開ダッシュボードのURL。", note: "列はDevice ID・Country（国名のみ、国旗なし）・IP。Countryは仮割当（Issue #976の9か国をアルファベット順に配置、hfu未確認）。m326・m353は予備機。IP列は、運用調査（2026-11-20）で実機の値を確認済み（8月から変化なし）。m326とm353は教材（~/jica_scripts）が未投入。IPをこの資料に残すかはレビューで判断（2026-11-19）。講師専用機・未参加機は載せない。" },
-  evidenceJa: "m3xxフリートの案内（hfu提供、2026-11-12、volatile）/ ホスト名の掲載: hfu承認（2026-11-12）/ 割当: open",
+  ja: { purpose: "RPiを「一時的な共有実験室」と位置づけ、各研修員にdevice ID（ホスト名）を示す。", key: "A Raspberry Pi is a temporary laboratory. Find your device.", visual: "研修機11台の表（Device ID、Participant、IP address）とフリートの要点、公開ダッシュボードのURL。", note: "列はDevice ID・Country（国名のみ、国旗なし）・IP。Countryの割当はIssue #976の9か国をアルファベット順に配置したもので、hfu確認済み（2026-11-21）。m326・m353は予備機。IP列は、運用調査（2026-11-20）で実機の値を確認済み（8月から変化なし）。m326とm353は教材（~/jica_scripts）が未投入。IPをこの資料に残すかはレビューで判断（2026-11-19）。講師専用機・未参加機は載せない。" },
+  evidenceJa: "m3xxフリートの案内（hfu提供、2026-11-12、volatile）/ ホスト名の掲載: hfu承認（2026-11-12）/ 割当: hfu確認（2026-11-21）",
 });
 
 add({

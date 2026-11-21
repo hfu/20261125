@@ -52,7 +52,8 @@ hfuの確認結果と、m3xxフリートの案内（hfu提供）を反映した�
 2. スライド31（新規）References: unopengis.org、dwg7.unopengis.org、dwg7.unopengis.org/guide（URLは未確認）。付録は31→32。
 3. 環境移行: `/mnt/skills` と `/home/claude` への依存を除去。`tools/verify.py` で検証を自動化。再ビルド結果は引き継ぎ前と文字・ノートが一致。
 4. status内訳: ready 22 / placeholder 6 / open 4、32枚。
-5. 「Imperfection is the natural state. That is why we combine efforts.」はhfuの所感。デッキ内の置き場所は未定。
+5. スライド25（2026-11-21、同日追記）: 国の割当を確定扱いにし、タグ「CONFIRM ASSIGNMENT」を外した。status は placeholder から ready へ（内訳は ready 23 / placeholder 5 / open 4）。
+6. 「Imperfection is the natural state. That is why we combine efforts.」はhfuの所感。デッキ内の置き場所は未定。
 
 ## 第6版（2026-11-20）での変更
 
