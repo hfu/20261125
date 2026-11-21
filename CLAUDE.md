@@ -12,7 +12,7 @@
 - 生成元は `src/data.js`（スライドの内容）→ `src/build.js`（描画）→ `src/plan.js`（slide-plan.md）。PPTXを直接編集しない。直すのは data.js か build.js。
 - 各スライドは session / kind / status(ready, placeholder, open) / time / title / data / say / purpose / transition / evidence / caution / ja{...} / evidenceJa を持つ。
 - ノートは SAY / PURPOSE / TRANSITION / SOURCE-STATUS / VISUAL / CAUTION / TIME。全スライドに SAY と VISUAL が必要。
-- コマ: S1 = 2–9、S2 = 10–19、S3 = 20–30、31 は付録（5つのゲート、DRAFT ONLY、納品時に削除）。スライドを挿入すると番号がずれる。Markdown 内の番号は更新する。
+- コマ: S1 = 2–9、S2 = 10–19、S3 = 20–31（31 は References）、32 は付録（5つのゲート、DRAFT ONLY、納品時に削除）。スライドを挿入すると番号がずれる。Markdown 内の番号は更新する。
 
 ## 情報の区別（必ず守る）
 確認済みの事実 / 出典の記述 / 派生した解釈 / 作業上の決定 / 変わりやすい情報 / 未解決。

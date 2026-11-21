@@ -46,6 +46,14 @@ hfuの確認結果と、m3xxフリートの案内（hfu提供）を反映した�
 6. 全体の調整: タイトルの副題が1行に収まるようにした。スライド3の右側の3行が途中で折り返さないようにした。連鎖図、橋渡し図、手順の行間を広げて、スライド下部の空きを減らした。
 7. 第3コマの時間は合計57分＋バッファ3分のまま（スライド23を3分、スライド24を2分とした）。
 
+## 第7版（2026-11-21）での変更
+
+1. スライド23（ラオス）: Observed 欄に現地作業写真2枚（顔なし、`assets/`）を配置。Planned 欄にhfu提供のストーリー（Chanthabury 地区詳細計画に必要な詳細地図／建物の階数を目視で調べOSMに入力するTest）を記入。Learned は枠のまま。集合写真は使わない（hfu決定: Wi-Fiパスワードの映り込みと多数の顔）。写真の撮影者・許諾・ライセンスはhfu確認待ち。
+2. スライド31（新規）References: unopengis.org、dwg7.unopengis.org、dwg7.unopengis.org/guide（URLは未確認）。付録は31→32。
+3. 環境移行: `/mnt/skills` と `/home/claude` への依存を除去。`tools/verify.py` で検証を自動化。再ビルド結果は引き継ぎ前と文字・ノートが一致。
+4. status内訳: ready 22 / placeholder 6 / open 4、32枚。
+5. 「Imperfection is the natural state. That is why we combine efforts.」はhfuの所感。デッキ内の置き場所は未定。
+
 ## 第6版（2026-11-20）での変更
 
 運用調査の結果（SSID、IP、帯域、名前解決）とhfuの申告（パスワード）を反映した。

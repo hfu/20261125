@@ -1,6 +1,6 @@
 # スライド計画（構造版）
 
-- 対象: `jica-un-open-gis-2026-structure.pptx`（31枚、16:9、英語スライド・英語ノート）
+- 対象: `jica-un-open-gis-2026-structure.pptx`（32枚、16:9、英語スライド・英語ノート）
 - 位置づけ: 構造確認用の下書き。最終配布版ではない。
 - 正本: `jica-un-open-gis-2026.md`
 - status凡例: ready = そのまま使える設計 / placeholder = 素材・確認待ちで差し替え前提 / open = 実話や事実が未確定で創作せず保留
@@ -12,10 +12,10 @@
 | オープニング | 1 | 1 |
 | 第1コマ Your expertise（13:00–14:00） | 8 | 50 |
 | 第2コマ Connect（14:15–15:15） | 10 | 55 |
-| 第3コマ Test（15:30–16:30） | 11 | 57 |
+| 第3コマ Test（15:30–16:30） | 12 | 57 |
 | 付録（構造版のみ。最終版では削除） | 1 | 0 |
 
-status内訳: ready 21 / placeholder 6 / open 4
+status内訳: ready 22 / placeholder 6 / open 4
 
 想定発話時間は各コマの60分に対し、第1コマ約50分＋質疑バッファ約10分、第2コマ約55分＋バッファ約5分、第3コマ約57分＋バッファ約3分。第1コマと第3コマの配分は、KCAIMの各コマのムーブメント時間に合わせた。
 
@@ -274,7 +274,7 @@ status内訳: ready 21 / placeholder 6 / open 4
 - session: 3
 - 目的: ラオスの小さな実験を、計画・観察・学びに分けて示す。
 - key message: Plan, observation and lesson are kept separate.
-- 視覚処理: 3列の枠（実施後に差し替え）。
+- 視覚処理: 3列。Plannedは hfu 提供のストーリー、Observedに現地作業写真2枚（顔なし）、Learnedは枠のまま。
 - 想定発話時間: 約2分
 - 講師ノート要旨: 結果が未成熟なら「計画」として提示。成功を先取りしない。
 - 根拠・出典: /decision-support/laos-recency, /open-questions/laos-post-workshop-review
@@ -357,9 +357,20 @@ status内訳: ready 21 / placeholder 6 / open 4
 - 根拠・出典: /scenarios/00-overall-lecture（最終メッセージ）
 - status: ready
 
+### 31. References
+
+- session: 3
+- 目的: 講義後に辿れる出発点のリンクを渡す。
+- key message: Three links to continue from.
+- 視覚処理: 3行（名前とURL）。
+- 想定発話時間: 約0分
+- 講師ノート要旨: 締めの後に残して質疑に使える。
+- 根拠・出典: hfu指定（2026-11-21）。URLは未確認。
+- status: ready
+
 ## 付録（構造版のみ。最終版では削除）
 
-### 31. Before finalization: five gates
+### 32. Before finalization: five gates
 
 - session: appendix
 - 目的: 最終化前に通す5つのゲートをデッキ内に明示する（手順書の完了規則）。

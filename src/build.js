@@ -226,14 +226,26 @@ const R_ = {
     T(s, runs, { x, y: 2.6, w, h: 4.0, fontSize: 18 });
   },
   placeholder3(s, d) {
-    const n = d.cols.length, gap = 0.35, w = (CW - gap * (n - 1)) / n;
-    d.cols.forEach((c, i) => {
-      const x = MX + i * (w + gap), y = 1.9;
-      dashedBox(s, x, y, w, 3.4);
-      T(s, c.h, { x: x + 0.25, y: y + 0.25, w: w - 0.5, h: 0.9, fontSize: 22, bold: true, color: C.text2, fontFace: "Cambria" });
-      T(s, c.t, { x: x + 0.25, y: y + 1.3, w: w - 0.5, h: 1.9, fontSize: 16, italic: true, color: C.accent3 });
+    const n = d.cols.length, gap = 0.35, evenW = (CW - gap * (n - 1)) / n;
+    const hasImg = d.cols.some((c) => c.imgs), bh = hasImg ? 4.0 : 3.4, ny = hasImg ? 6.05 : 5.6;
+    let x = MX;
+    d.cols.forEach((c) => {
+      const w = c.w || evenW, y = 1.9;
+      dashedBox(s, x, y, w, bh);
+      T(s, c.h, { x: x + 0.25, y: y + 0.25, w: w - 0.5, h: hasImg ? 0.5 : 0.9, fontSize: 22, bold: true, color: C.text2, fontFace: "Cambria" });
+      if (c.imgs) {
+        let ix = x + 0.25;
+        c.imgs.forEach((im) => {
+          s.addImage({ path: path.join(ROOT, im.src), x: ix, y: y + 0.8, w: im.w, h: im.h, altText: im.alt, objectName: on("photo") });
+          ix += im.w + 0.15;
+        });
+        T(s, c.cap, { x: x + 0.25, y: y + 3.65, w: w - 0.5, h: 0.3, fontSize: 12, italic: true, color: C.accent6 });
+      } else {
+        T(s, c.t, { x: x + 0.25, y: y + (hasImg ? 0.9 : 1.3), w: w - 0.5, h: hasImg ? 2.9 : 1.9, fontSize: 16, italic: !c.plain, color: c.plain ? C.text1 : C.accent3 });
+      }
+      x += w + gap;
     });
-    T(s, d.need, { x: MX, y: 5.6, w: CW, h: 1.1, fontSize: 16, bold: true, color: C.accent3 });
+    T(s, d.need, { x: MX, y: ny, w: CW, h: 0.8, fontSize: 16, bold: true, color: C.accent3 });
   },
   steps(s, d) {
     const rows = d.rows, n = rows.length, y0 = 1.85, rh = Math.min(0.85, 4.3 / n);
@@ -307,6 +319,13 @@ const R_ = {
       R(s, ST.roundRect, { x: 6.5, y: y + 0.1, w: 6.2, h: 0.8, rectRadius: 0.08, fill: { color: "FFFFFF" }, line: { color: C.accent1, width: 1.5, dashType: "dash" } });
     });
     foot(s, d.foot, 5.95);
+  },
+  refs(s, d) {
+    d.rows.forEach((r, i) => {
+      const y = 2.0 + i * 1.3;
+      T(s, r.t, { x: MX, y, w: CW, h: 0.55, fontSize: 26, bold: true, color: C.text2, fontFace: "Cambria", valign: "middle" });
+      T(s, r.u, { x: MX, y: y + 0.55, w: CW, h: 0.45, fontSize: 22, color: C.accent1, fontFace: MONO, valign: "middle" });
+    });
   },
   close(s, d) {
     s.addText("Three things to take home", { placeholder: "title" });

@@ -426,18 +426,22 @@ add({
   title: "Laos: a small test in practice",
   data: {
     cols: [
-      { h: "Planned", t: "[Fill from the workshop plan]" },
-      { h: "Observed", t: "[Verified observations only]" },
-      { h: "Learned", t: "[Lessons, and what not to generalise]" },
+      { h: "Planned", w: 2.9, t: "Need: a detailed map for the Chanthabury district detailed plan.\n\nTest: check the number of floors of buildings by eye, and enter it into OpenStreetMap.", plain: true },
+      { h: "Observed", w: 5.9, imgs: [
+        { src: "assets/laos-field-1.jpg", w: 2.9, h: 2.175, alt: "Two people on a street in Laos; one points up at a tall building." },
+        { src: "assets/laos-field-2.jpg", w: 2.25, h: 3.0, alt: "A hand marks a printed map with a pencil; faces are not shown." },
+      ], cap: "Field work: checking floors by eye." },
+      { h: "Learned", w: 2.9, t: "[Lessons, and what not to generalise]" },
     ],
-    need: "EVIDENCE NEEDED after the review of 2026-11-20: one image for connect, one for test. If reflection is not mature, show this as a planned test.",
+    need: "STILL NEEDED after the review of 2026-11-20: verified observations and lessons. Photos show field work, with no faces.",
   },
+  visual: "Two photographs supplied by hfu: field work in Laos, floors of buildings checked by eye; no faces shown. Photographer, permission and licence: hfu to confirm. The group photograph is NOT used (decision 2026-11-21: Wi-Fi password on screen, many faces).",
   say: "[If verified results exist:] Here is what we planned, what we observed, and what we learned. [If not:] This was a small test, and I can tell you what we planned and what is still unknown. One verified building is more valuable than many guessed buildings.",
   purpose: "Show a recent, bounded test, with plan, observation and lesson kept separate.",
   transition: "Today we will run a small test of our own. It also prepares tomorrow.",
   evidence: "Workshop outcome: unknown at the time of this draft (volatile).",
   caution: "Never narrate success before it is verified. Do not invent outcomes, reactions, edits or photographs. Do not pressure the Lao participant.",
-  ja: { purpose: "ラオスの小さな実験を、計画・観察・学びに分けて示す。", key: "Plan, observation and lesson are kept separate.", visual: "3列の枠（実施後に差し替え）。", note: "結果が未成熟なら「計画」として提示。成功を先取りしない。" },
+  ja: { purpose: "ラオスの小さな実験を、計画・観察・学びに分けて示す。", key: "Plan, observation and lesson are kept separate.", visual: "3列。Plannedは hfu 提供のストーリー、Observedに現地作業写真2枚（顔なし）、Learnedは枠のまま。", note: "結果が未成熟なら「計画」として提示。成功を先取りしない。" },
   evidenceJa: "/decision-support/laos-recency, /open-questions/laos-post-workshop-review",
 });
 
@@ -567,6 +571,25 @@ add({
   caution: "No motivational clichés. End on time.",
   ja: { purpose: "最終メッセージ3行で閉じる。", key: "Trust your expertise. Connect it with others. Start with one small test.", visual: "ダーク背景に3行。", note: "時間通りに終える。" },
   evidenceJa: "/scenarios/00-overall-lecture（最終メッセージ）",
+});
+
+add({
+  session: 3, kind: "refs", status: "ready", time: 0,
+  title: "References",
+  data: {
+    rows: [
+      { t: "UN Open GIS Initiative", u: "https://unopengis.org" },
+      { t: "DWG7", u: "https://dwg7.unopengis.org" },
+      { t: "DWG7 guide", u: "https://dwg7.unopengis.org/guide" },
+    ],
+  },
+  say: "These are three pages to continue from: the initiative, DWG7, and the DWG7 guide.",
+  purpose: "Give participants the starting links after the lecture.",
+  transition: "None. Tomorrow at 09:30: Mr. Matsuzawa's session.",
+  evidence: "URLs supplied by hfu (2026-11-21). Not opened or checked from the build environment.",
+  caution: "Add no link that is not confirmed. No Wi-Fi or device details on this slide.",
+  ja: { purpose: "講義後に辿れる出発点のリンクを渡す。", key: "Three links to continue from.", visual: "3行（名前とURL）。", note: "締めの後に残して質疑に使える。" },
+  evidenceJa: "hfu指定（2026-11-21）。URLは未確認。",
 });
 
 // ---------- Appendix (draft only) ----------
