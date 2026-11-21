@@ -167,6 +167,17 @@ vary: Origin
 - Hidenori joined UN Geospatial Information Section from 2017 to 2019. 
   - UN Open GIS Initiative + UN Maps = UN Vector Tile Toolkit (2018-)
   
+### UNVT Portable
+
+> 2〜3分（Claude の案。ブロック2、Initiative の成り立ちの直後。軽く入れる）。教室のラズパイが、なぜここにあるかの説明になる。明日の松澤さんの回への橋にもなる。
+
+- UN Vector Tile Toolkit (UNVT) has a portable form: a small server for web maps, first made on a Raspberry Pi.
+- Smart Maps Portable (2024): Raspberry Pi 4B, a battery, a 2 TB SSD and a GNSS antenna. It ran 18 hours without external power, and served more than 25 clients over Wi-Fi.
+- The Raspberry Pi in this room is a descendant. "niroku" is a new implementation of UNVT Portable, for this JICA course.
+- Tomorrow, you will use it to make tiled maps.
+
+> 確認（Claude）: 2024年の資料（jica-2411）の記述（18時間、25台以上）は、hfu 自身の資料のまま。niroku の説明は、unvt/niroku のリポジトリの説明（"A new implementation of UNVT Portable"、2025-10-13 作成）による。「明日、タイル地図を作る」は、松澤さんの教材の記述（正本）による。UNVT Portable の最初の実装がいつか、公開の記録からは確認できていない。
+
 ### UN Open GIS Initiative: current co-chairs
 > 3分
 
@@ -190,7 +201,7 @@ vary: Origin
 
 - Quick Mapping Project (QMP): a JICA co-creation, innovation and circulation initiative, powered by UN Smart Maps.
 - Quick Mapping: make maps quickly, and make them usable at once, for the users' needs. It builds on OpenStreetMap.
-- Two ideas: "We co-create with generative AI." and "It's easy to be brave enough to map."
+- Its idea: "It's easy to be brave enough to map."
 - 2025-07-09, "Q Day" at JICA headquarters: hybrid, one topic every 30 minutes, the rest is free mapping and discussion.
 - The Laos work (next block) is part of QMP.
 
@@ -227,6 +238,7 @@ vary: Origin
 
 - Since 2023, dwg7 has treated AI as one of the members.
   - The dwg7 web page invites "LLM users, and even LLMs".
+  - The JICA Quick Mapping Project took it as a first principle: "We co-create with generative AI."
 - Today, AI writes part of our code and records.
   - Many of the projects you will see were made with AI.
 - People decide. AI cannot see the site.
@@ -235,6 +247,15 @@ vary: Origin
 
 ### Recent projects
 > 1件 約11分。前半（休憩前）は2件、後半は4件。
+
+> **概観のスライド（1分）。** 聴衆が、これから見る9件の全体を先に持てるように、3つに分ける。免責は、ここで1回だけ言う: 「これらは dwg7 の活動で、どの組織の公式な製品でもない」。各プロジェクトのスライドの下には、出典の表記だけを残す。
+
+- **Starting from a need:** Laos (Vientiane), FERSPAS (FAO)
+- **Data:** bvmap-koicha (GSI tiles), snow-hokkaido (satellite), waterloo (drone imagery)
+- **Flying and seeing:** dji-waypoints-hitl, dorayaki, ortho-earth
+- **My next challenge:** AX (Asahikawa)
+
+> 並び: ラオス → FERSPAS（どちらも「使われ方・必要から始める」）→ bvmap-koicha → snow-hokkaido → waterloo → dji（ドローンの流れ）→ dorayaki → ortho-earth（見て分かる）→ AX。
 
 > 順序の考え方（Claude の案、書き換えてください）:
 > 聴衆の世界（国の測量成果）から始め、新しいデータ（衛星、ドローン）、集め方（人が責任を持つ）、見せ方（3D）、世界の見え方（面積が正しい地図）へ進む。
@@ -265,6 +286,22 @@ vary: Origin
 > スライド案: ① 必要（スタジアム周辺、歩行者優先） ② 背景画像の比較（Bing と Esri。日付の違い） ③ 画面: `assets/screens/height-coverage-vientiane.jpg`（0% の画面）と、zukaku ④ 現地の写真2枚（顔なし）と、結果（hfu が書く）
 >
 > 確認（Claude）: UNopenGIS/7 の #873（2026-03-04 以降のコメント）、dwg7/height-coverage、dwg7/vientiane-planning-map、dwg7/zukaku による。「階数を目視で数える」仮説は、#988 の hfu の記述。Bing と Esri の比較は mapconcierge さんのコメント。建物の数（12 / 3,654）は、撮影した画面の値で、日々変わる。
+
+#### dwg7/ferspas-html-demo (with FAO)
+
+> 9分（3枚）。Claude の草稿。「うまくいかなかった話」と「使われ方から始める」の両方になる。
+
+- Need: FAO publishes remote sensing data and analysis notebooks (FERSPAS). Public officials who cannot set up a programming environment cannot use them.
+- First try: fit our own architecture onto FERSPAS. We paused it on 18 September 2026.
+  - After reading FERSPAS's own user stories, I saw that we had fitted our architecture onto FERSPAS, instead of starting from how FERSPAS is used.
+- Second try: move the tasks that are already stable in the notebooks to transparent web pages, which run in a browser.
+  - Examples: an agricultural stress index (Italy), drained cropland over 31 years (Bangladesh), a water balance over 47 years.
+- "Explore in the experts' environment. Share stable tasks on the web."
+- Not yet known: whether other tasks and other users follow. The work is closed for now, and may reopen.
+
+> スライド案: ① 必要と、最初の試み（中断の理由） ② 画面（`dwg7.unopengis.org/ferspas-html-demo/` のケース。**未撮影**。撮るなら私が） ③ 「専門家の環境で探る。安定したものを Web で共有する」とまだ分からないこと
+>
+> 確認（Claude）: UNopenGIS/7 の #1006（2026-09-18、FAO 側2名、yuiseki さん、hfu の4名の打合せ）、#1011、dwg7/ferspas57 の README による。FAO の方々の氏名は出さない。FAO のノートブックの引用は、出典（un-fao/FERSPAS_demo）を明記する。連携の名目（組織間か、作業部会間か）は、先方が柔軟だと書かれているが、スライドでは「FAO と連携」と書くか、hfu が判断する。
 
 #### dwg7/bvmap-koicha
 > 11分（14:45 + 8 = 14:53–15:04）
@@ -300,7 +337,7 @@ vary: Origin
 
 - Waterloo, Sierra Leone: a drone image with about 5 cm pixels.
 - It is shared by HOT on OpenAerialMap, under an open license (CC BY-SA 4.0).
-- We opened it as PMTiles in a web map, with Overture Maps buildings.
+- We opened it as PMTiles (a whole map in one file) in a web map, with Overture Maps buildings (open building data).
 - We also wrote down what happened when we tried the new OpenAerialMap PMTiles feature. The notes are facts from someone who tried, not criticism.
 - It is a dwg7 activity. It is not an OpenAerialMap or HOT project.
 - Not yet known: whether this works the same for the images of your country.
@@ -324,27 +361,11 @@ vary: Origin
 
 > 確認（Claude）: 作者は yuiseki さん。ツールの README は「実機 RC 2 での読み書きは未確認」と書き、#1021 では別実装で成功したと報告している。スライドでは、手順と責任の分担だけにとどめ、成功の数字は使わない（#1021 の 382枚、7,700円などは、話すなら hfu の言葉で）。 https://github.com/yuiseki/dji-waypoints-hitl
 
-#### dwg7/ferspas-html-demo (with FAO)
-
-> 9分（3枚）。Claude の草稿。「うまくいかなかった話」と「使われ方から始める」の両方になる。
-
-- Need: FAO publishes remote sensing data and analysis notebooks (FERSPAS). Public officials who cannot set up a programming environment cannot use them.
-- First try: fit our own architecture (Staccato) onto FERSPAS. We paused it on 18 September 2026.
-  - After reading FERSPAS's own user stories, I saw that we had fitted our architecture onto FERSPAS, instead of starting from how FERSPAS is used.
-- Second try: move the tasks that are already stable in the notebooks to transparent web pages, which run in a browser.
-  - Examples: an agricultural stress index (Italy), drained cropland over 31 years (Bangladesh), a water balance over 47 years.
-- "Explore in the experts' environment. Share stable tasks on the web."
-- Not yet known: whether other tasks and other users follow. The work is closed for now, and may reopen.
-
-> スライド案: ① 必要と、最初の試み（中断の理由） ② 画面（`dwg7.unopengis.org/ferspas-html-demo/` のケース。**未撮影**。撮るなら私が） ③ 「専門家の環境で探る。安定したものを Web で共有する」とまだ分からないこと
->
-> 確認（Claude）: UNopenGIS/7 の #1006（2026-09-18、FAO 側2名、yuiseki さん、hfu の4名の打合せ）、#1011、dwg7/ferspas57 の README による。FAO の方々の氏名は出さない。FAO のノートブックの引用は、出典（un-fao/FERSPAS_demo）を明記する。連携の名目（組織間か、作業部会間か）は、先方が柔軟だと書かれているが、スライドでは「FAO と連携」と書くか、hfu が判断する。
-
 #### dwg7/dorayaki
 > 11分（15:52–16:03）
 
 - A map tile holds one height per place. It cannot hold a bridge and the road under it.
-- Dorayaki keeps the usual tile address (z/x/y) and puts 3D points (Gaussian splats) inside each tile.
+- Dorayaki keeps the usual tile address (z/x/y) and puts 3D points (Gaussian splats: points drawn as soft dots) inside each tile.
 - A real example: the Kawazu loop bridge and the valley below it, from about 476 million points, became one 83 MB file. You can see it from above and from below in a browser.
 - I started by following a method that Kenji Yoshida showed me (#1030).
 - It is an experiment, not a standard.
@@ -367,6 +388,41 @@ vary: Origin
 > スライド案（3枚）: ① 画面: `ortho-earth-top.jpg`（Equal to all, fair to the Earth） ② 画面: `ortho-earth-equal.jpg`（国が正しい大きさに見える世界地図） ③ 先に読み込めば、通信なしで使える。まだ分からないこと。**吉田さんの了解を取ってから**
 
 > 確認（Claude）: README の記述のまま（GPL-3.0）。「先に読み込めば通信なしで使える」は #1031 の吉田さんのコメント。紹介の許可を本人に取ること。 https://www.ortho-earth.com/
+
+### AX: Asahikawa eXperiment (my next challenge)
+
+> 2分（2枚＋図1枚）。**本文は、AX セッション（hfu の別セッション）が書いた英文の草稿（hfu の確認前）。** 置き場所は、締めの直前。押していれば1枚で閉じる（Slide A の問いと方法を3行にして、Slide B の画像を右に置く案）。AX の内部文書（miso）は使わない。
+> hfu が確認する点: ① 1月の北海道測量技術講演会の予告編として位置づけてよいか ② "dwg7" の名を出すか（現在の文面は出していない） ③ 発起者の氏名（Hidenori Fujimura (hfu)）を出してよいか。
+
+#### Slide A: the challenge
+
+**AX — Asahikawa eXperiment: a challenge I am starting**
+
+- Question: How can wide-area observation and open data reach the problems of one local community, at a scale people can use?
+- Method: start from what already exists locally (public data, local skills, ongoing work). Build a prototype strong enough to show. Take it there. Record every response: support, correction, objection, silence.
+- Time-boxed: the external effort stops at the end of the fiscal year. Whatever is useful can be reused or imitated by anyone. Nothing forces it to continue.
+- Principle: "Absence is information." We do not fill gaps with invented data.
+
+*Footer: An experiment by Hidenori Fujimura (hfu). Not an official project of GSI or the City of Asahikawa. Does not imply participation or endorsement by any organization.*
+
+#### Slide B: first step
+
+**First step: where are the snow-removal routes?**
+
+- Input: the urban snow-removal route network, published as open data by the City of Asahikawa (source only; no partnership implied).
+- Done: source, terms of use and coordinate system recorded; reprojected (JGD2011 / Plane Rectangular zone XII → WGS84); displayed at the correct position; terrain (GSI elevation) added.
+- Evidence boundary: this is a route network, NOT the actual plowing status. Snow extent is not snow depth. A rendering is not an observation.
+- Open question: whose problem in Asahikawa can this connect to?
+
+*Image: `docs/snow-asahikawa/screenshot-002-terrain.jpg` in the AX repository（**未入手**。AX 側から受け取る）。Basemap: bvmap-koicha, a dwg7 activity, not an official GSI product; GSI optimized vector tiles and elevation tiles. City data: CC BY 2.1 JP, attribution required.*
+
+#### Figure
+
+`[Wide-area observation / open data]  →  [Local, large-scale map]  →  [Whose problem? (to be learned on site)]`
+Under the arrows: "built from what exists" | "shown, then broken by local people" | "stop, hand over, or disappear: all are results"
+Caption: "Make it strong enough to reach. Strike it and see whether it resonates."
+
+> 確認（Claude）: 上の英文は、AX セッションのメッセージをそのまま写した（2026-11-21）。「成果はまだない。地域に響いたかどうかは未観測」と、AX 側が明記している。市のデータの再配布条件は、このレイヤー固有では未確認（AX 側）。hfu/ax は private で、main には未 push（作業は worktree のブランチ）。
 
 ### Closing
 
