@@ -21,6 +21,11 @@
 - ブロック3 前半（30）: dwg7 の紹介 8 / bvmap-koicha 11 / snow-hokkaido 11
 - ブロック3 後半（60）: waterloo 11 / dji-waypoints-hitl 11 / dorayaki 11 / ortho-earth 11 / 締め 8 / 質疑・議論 8
 
+時間の再配分案（Claude、ラオス・FERSPAS・QMP を足す場合）:
+
+- ブロック2: 「Open with Official」3分と QMP 4分を足すと、合計 7分増える。他から 7分を削る（OSS と GSI Maps 5→3、DWG 5→3、仕組み 5→3、質疑 4→2 など）。
+- ブロック3（プロジェクトに使える時間は、約63分）: ラオス 12、FERSPAS 9、bvmap-koicha 8、snow-hokkaido 8、dorayaki 9、ortho-earth 8、dji-waypoints-hitl 5、waterloo 4。**waterloo か dji を、任意（時間が余ったら）にする**案もある。
+
 枚数の見込み: ブロック1 約20枚、ブロック2 約12枚、ブロック3 約25枚。合計 約55〜60枚。
 前提: 各プロジェクト 11分は、画面を見せる時間を含む。説明のスライドは、1項目あたり 2〜3枚。
 
@@ -144,6 +149,17 @@ vary: Origin
 - Open source has been the procurement strategy of GSI Maps since 2013
   - Optionality and interoperability
   
+### Open with Official
+
+> 3分（Claude の草稿。出典: hfu の資料 2025-06-26「Strategic Use of Geospatial Information」（UNopenGIS/qmp の docs/decks/2025-06-timor-leste.pdf）。東ティモールの研修員がいるので、本人に見られる前提で）
+
+- From "Open or Official" to "Open with Official".
+- GSI Maps: a geoportal built with 100% open source. The code is on GitHub.
+- Official data and OpenStreetMap, together, in private-sector web maps.
+- Through sharing, GIS people build partnerships among problem solvers. Trust comes from software, data and people.
+
+> 確認（Claude）: 資料の見出しと項目のみを写した。数字は無い。「Open with Official」の説明は、hfu の言葉で。
+
 ### UN Open GIS Initiative
 > 8分
 
@@ -167,6 +183,18 @@ vary: Origin
 - DWG6: OpenDroneMap
 - DWG7: Smart Maps
 - DWG8: IGIF implementation
+
+### JICA and the Initiative: Quick Mapping Project
+
+> 4分（Claude の草稿。ブロック2の最後、「How it works」の前。聴衆が JICA の研修員なので、外せないと思う。時間は、他の項目から割く）
+
+- Quick Mapping Project (QMP): a JICA co-creation, innovation and circulation initiative, powered by UN Smart Maps.
+- Quick Mapping: make maps quickly, and make them usable at once, for the users' needs. It builds on OpenStreetMap.
+- Two ideas: "We co-create with generative AI." and "It's easy to be brave enough to map."
+- 2025-07-09, "Q Day" at JICA headquarters: hybrid, one topic every 30 minutes, the rest is free mapping and discussion.
+- The Laos work (next block) is part of QMP.
+
+> 確認（Claude）: UNopenGIS/qmp の docs（英語）、q20250709 の README による。Q Day の内容は「ドラフト、生成 AI が作成した情報を含む」と書かれている。QMP の成果（地図の量、参加者数）は、読んだ範囲に無い。数字は使わない。2025年6月の東ティモール向けの資料でも、QMP を最近の活動として紹介している。
 
 ### How it works
 
@@ -203,7 +231,7 @@ vary: Origin
   - Many of the projects you will see were made with AI.
 - People decide. AI cannot see the site.
 
-> 確認（Claude）: 公式サイトの記述（"large language model (LLM) users, and even LLMs"）は確認済み。2023年の例: yuiseki さんの TRIDENT（#141、2023-05-03）、「Raspberry Pi 上でも LLM は動く」（#208、2023-07-08）。「最初に LLM の受け入れを明示した」発言の原文は未確認なので、スライドに引用しない。
+> 確認（Claude）: 公式サイトの記述（"large language model (LLM) users, and even LLMs"）は確認済み。2023年の例: yuiseki さんの TRIDENT（#141、2023-05-03）、「Raspberry Pi 上でも LLM は動く」（#208、2023-07-08）。yuiseki さんの2024年2月の発言「近い将来、十分に高度な AI を仲間として迎える備えが要る」（原文: *In the near future, we need to be prepared to welcome sufficiently advanced AI as our companions.*）が、UNopenGIS/qmp の docs/en/concepts.md に引用されている（確認済み）。スライドに引用するなら、この出典を明記する。
 
 ### Recent projects
 > 1件 約11分。前半（休憩前）は2件、後半は4件。
@@ -218,6 +246,25 @@ vary: Origin
 > 6. ortho-earth — 世界地図で、国が正しい大きさに見える（Equal Earth）。最後の印象。
 >
 > 各項目は、必要 → 試したこと → 分かったこと → まだ分からないこと、の型。「まだ分からないこと」に *Imperfection is the natural state. That is why we combine efforts.* を置く場所がある。
+
+#### Laos: Vientiane (QMP, height-coverage, zukaku)
+
+> 12分（4枚）。Claude の草稿。**結果と学びは、hfu が書く。** 11/20 の現地作業の結果は、私は知らないので、空欄にしてある。ラオスの研修員に、検証やコメントを求めない。
+
+- Need: a detailed map for the Chanthabury district detailed plan, around the Chao Anouvong Stadium in Vientiane.
+  - The mapping supports pedestrian-first planning, universal design and public-space quality.
+  - It goes with Japan's cooperation, including the stadium reconstruction, and the planning capacity of local government.
+- We opened a HOT Tasking Manager project (44787) for the area, in March 2026, as part of the JICA Quick Mapping Challenge.
+- Which imagery? Bing is newer but coarser. Esri World Imagery is older but sharper.
+  - In one place, a World Bank building was finished in Bing and still under construction in Esri. Imagery has a date.
+- Finding: in the area, almost no building has a height or a number of floors in OpenStreetMap (height-coverage: 12 of 3,654 buildings, seen on 2026-11-21).
+- Idea: count the floors by eye, and enter them. Printed paper maps (zukaku) for the field. Zoning on a base map (vientiane-planning-map).
+- 20 November, in the field: [hfu が書く: 何を、何人で、どこまで。写真2枚は `assets/laos-field-1.jpg`、`laos-field-2.jpg`]
+- Not yet known: [hfu が書く]
+
+> スライド案: ① 必要（スタジアム周辺、歩行者優先） ② 背景画像の比較（Bing と Esri。日付の違い） ③ 画面: `assets/screens/height-coverage-vientiane.jpg`（0% の画面）と、zukaku ④ 現地の写真2枚（顔なし）と、結果（hfu が書く）
+>
+> 確認（Claude）: UNopenGIS/7 の #873（2026-03-04 以降のコメント）、dwg7/height-coverage、dwg7/vientiane-planning-map、dwg7/zukaku による。「階数を目視で数える」仮説は、#988 の hfu の記述。Bing と Esri の比較は mapconcierge さんのコメント。建物の数（12 / 3,654）は、撮影した画面の値で、日々変わる。
 
 #### dwg7/bvmap-koicha
 > 11分（14:45 + 8 = 14:53–15:04）
@@ -276,6 +323,22 @@ vary: Origin
 > スライド案（2枚）: ① 3つの役割（人、AI、ドローン）の図。作図 ② 誰が決めるか（人が決めること、AI ができること）。画面は `dji-waypoints-hitl-github.jpg` があるが、視覚の効果は弱い。hfu の #1021 の画像を使う案もある（本人確認が要る）
 
 > 確認（Claude）: 作者は yuiseki さん。ツールの README は「実機 RC 2 での読み書きは未確認」と書き、#1021 では別実装で成功したと報告している。スライドでは、手順と責任の分担だけにとどめ、成功の数字は使わない（#1021 の 382枚、7,700円などは、話すなら hfu の言葉で）。 https://github.com/yuiseki/dji-waypoints-hitl
+
+#### dwg7/ferspas-html-demo (with FAO)
+
+> 9分（3枚）。Claude の草稿。「うまくいかなかった話」と「使われ方から始める」の両方になる。
+
+- Need: FAO publishes remote sensing data and analysis notebooks (FERSPAS). Public officials who cannot set up a programming environment cannot use them.
+- First try: fit our own architecture (Staccato) onto FERSPAS. We paused it on 18 September 2026.
+  - After reading FERSPAS's own user stories, I saw that we had fitted our architecture onto FERSPAS, instead of starting from how FERSPAS is used.
+- Second try: move the tasks that are already stable in the notebooks to transparent web pages, which run in a browser.
+  - Examples: an agricultural stress index (Italy), drained cropland over 31 years (Bangladesh), a water balance over 47 years.
+- "Explore in the experts' environment. Share stable tasks on the web."
+- Not yet known: whether other tasks and other users follow. The work is closed for now, and may reopen.
+
+> スライド案: ① 必要と、最初の試み（中断の理由） ② 画面（`dwg7.unopengis.org/ferspas-html-demo/` のケース。**未撮影**。撮るなら私が） ③ 「専門家の環境で探る。安定したものを Web で共有する」とまだ分からないこと
+>
+> 確認（Claude）: UNopenGIS/7 の #1006（2026-09-18、FAO 側2名、yuiseki さん、hfu の4名の打合せ）、#1011、dwg7/ferspas57 の README による。FAO の方々の氏名は出さない。FAO のノートブックの引用は、出典（un-fao/FERSPAS_demo）を明記する。連携の名目（組織間か、作業部会間か）は、先方が柔軟だと書かれているが、スライドでは「FAO と連携」と書くか、hfu が判断する。
 
 #### dwg7/dorayaki
 > 11分（15:52–16:03）
