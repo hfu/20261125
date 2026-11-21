@@ -168,6 +168,20 @@ vary: Origin
 - DWG7: Smart Maps
 - DWG8: IGIF implementation
 
+### How it works
+
+> 5分（Claude の草稿。dwg7/guide の「dwg7 in 5 Minutes」「Field Guide」による。書き換えてください）
+
+- Everything happens in public issues: github.com/UNopenGIS/7
+- A thread follows one pattern:
+  - question → experiment → result with conditions → review and correction → reuse
+- Weekly meetup: Tuesday 12:30–12:55 JST (25 minutes), online
+  - Presenters post a written update before the meeting.
+- Monthly meeting (VTC): the schedule is open (github.com/UNopenGIS/roadmap)
+- Anyone can read, comment and repeat an experiment.
+
+> 確認（Claude）: 週次の時間と「公開の記録が一次の記録」は dwg7 guide（2026-11-11 確認、guide 自身が記録）による。月次の VTC は roadmap の README による。
+
 ## 3. Smart Maps (dwg7) activities
 > **ブロック3: 14:45–15:15（30分）、休憩、15:30–16:30（60分）**
 > dwg7 の紹介 8分（以下4項目）
@@ -178,6 +192,18 @@ vary: Origin
   - Vision: keep web maps open.
   - Mission: test new technologies. 
 - Rule: share projects or topics under gh:unopengis or gh:dwg7. 
+
+### dwg7 and AI
+
+> 3分（ブロック3の dwg7 紹介の中。「Recent projects」の直前）。Claude の案。置き場所の理由: 最初の事例（bvmap-koicha）に入る前に、「道具としての AI」を軽く置いておくと、各事例の中の AI の話が自然に見える。第1ブロックの「CLI は AI とよく合う」とは、重ならないよう、こちらは「仲間として扱ってきた」歴史と、人が決めること、に絞る。
+
+- Since 2023, dwg7 has treated AI as one of the members.
+  - The dwg7 web page invites "LLM users, and even LLMs".
+- Today, AI writes part of our code and records.
+  - Many of the projects you will see were made with AI.
+- People decide. AI cannot see the site.
+
+> 確認（Claude）: 公式サイトの記述（"large language model (LLM) users, and even LLMs"）は確認済み。2023年の例: yuiseki さんの TRIDENT（#141、2023-05-03）、「Raspberry Pi 上でも LLM は動く」（#208、2023-07-08）。「最初に LLM の受け入れを明示した」発言の原文は未確認なので、スライドに引用しない。
 
 ### Recent projects
 > 1件 約11分。前半（休憩前）は2件、後半は4件。

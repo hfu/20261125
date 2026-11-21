@@ -13,7 +13,7 @@ import argparse, json, os, re, shutil, subprocess, sys, zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TMP = os.path.join(ROOT, "build-tmp")
-NAME = "jica-un-open-gis-2026-structure"
+NAME = os.environ.get("DECK_NAME", "jica-un-open-gis-2026-structure")
 
 # CLAUDE.md "検証" 3: where each sensitive-looking string may appear (1-based slide numbers).
 ALLOW_VECTORTILES = {21, 27}
@@ -24,6 +24,7 @@ MAC = re.compile(r"\b[0-9a-fA-F]{2}(?:[:-][0-9a-fA-F]{2}){5}\b")
 IP = re.compile(r"\b192\.168\.\d{1,3}\.\d{1,3}\b")
 
 fails, warns = [], []
+SKIP_NOTES = False
 
 
 def ok(msg): print("  PASS", msg)
@@ -69,12 +70,13 @@ def load_deck(path):
 def check_structure(z, names, slides, notes):
     print("[2] notes: SAY and VISUAL on every slide")
     bad = 0
-    for k in sorted(slides):
+    for k in sorted(slides if not SKIP_NOTES else []):
         nt = text_of(z.read(notes[k]).decode()) if notes[k] else ""
         for label in ("SAY", "VISUAL"):
             if not re.search(rf"^{label}\b", nt, flags=re.M):
                 fail(f"slide {k}: notes lack {label}"); bad += 1
-    if not bad:
+    if SKIP_NOTES: print("  (skipped)")
+    elif not bad:
         ok(f"all {len(slides)} slides have SAY and VISUAL")
 
     print("[3] sensitive strings")
@@ -157,12 +159,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-pdf", action="store_true")
     ap.add_argument("--pptx")
+    ap.add_argument("--vt-slides", help="comma-separated slide numbers where 'vectortiles' may appear (default 21,27)")
+    ap.add_argument("--ip-slides", help="comma-separated slide numbers where 192.168.x.x may appear (default 25)")
+    ap.add_argument("--no-notes-check", action="store_true", help="skip the SAY/VISUAL notes check (talk deck has no SAY/VISUAL notes)")
+    ap.add_argument("--no-status", action="store_true", help="skip the data.js status breakdown")
     a = ap.parse_args()
+    global ALLOW_VECTORTILES, ALLOW_IP
+    if a.vt_slides: ALLOW_VECTORTILES = {int(x) for x in a.vt_slides.split(",")}
+    if a.ip_slides: ALLOW_IP = {int(x) for x in a.ip_slides.split(",")}
+    global SKIP_NOTES
+    SKIP_NOTES = a.no_notes_check
     pptx = os.path.abspath(a.pptx) if a.pptx else build()
     z, names, slides, notes = load_deck(pptx)
     check_structure(z, names, slides, notes)
-    n = status_breakdown()
-    if n != len(slides): fail(f"data.js has {n} slides but the PPTX has {len(slides)}")
+    if not a.no_status:
+        n = status_breakdown()
+        if n != len(slides): fail(f"data.js has {n} slides but the PPTX has {len(slides)}")
     if not a.no_pdf: render(pptx, len(slides))
     print(f"\nRESULT: {'FAIL' if fails else 'PASS'} ({len(fails)} fail, {len(warns)} warn)")
     print("Visual check (overflow, overlap, small text) still needs eyes: open build-tmp/contact-*.png")
