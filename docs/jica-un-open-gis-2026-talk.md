@@ -204,6 +204,8 @@ vary: Origin
 - It is a dwg7 activity. It is not an official GSI product.
 - Not yet known: a nationwide version. Now only Tokyo and Hokkaido.
 
+> スライド案（3枚）: ① 何か（3行） ② 画面: `assets/screens/bvmap-koicha-tokyo.jpg`（左が元、右が濃茶。建物の量の違い） ③ まだ分からないこと
+
 > 確認（Claude）: README の数字（約4,800棟→約95,000棟、約20倍）は、README の記述のまま。独立に検証していない。「koicha」は濃茶（抹茶を少ない湯で濃く点てる）の由来。https://dwg7.unopengis.org/bvmap-koicha/
 
 #### dwg7/snow-hokkaido
@@ -216,6 +218,8 @@ vary: Origin
 - It is a prototype. Records start in August 2024.
 - Not yet known: how to publish it automatically (now manual).
 
+> スライド案（3枚）: ① 問い（毎日の雪を、衛星写真で） ② 画面: `snow-hokkaido-map.jpg` ③ 画面: `snow-hokkaido-freshness.jpg`（「情報の新しさ」。雲で見えない所は、最後に見えた日からの日数で記録する）
+
 > 確認（Claude）: 数字（約24時間、平均2.4日、2024年8月から）は README のまま。README 内に、市町村数が 168 と 179 で食い違う箇所がある。スライドでは数えない。https://dwg7.unopengis.org/snow-hokkaido/
 
 #### dwg7/waterloo
@@ -227,6 +231,8 @@ vary: Origin
 - We also wrote down what happened when we tried the new OpenAerialMap PMTiles feature. The notes are facts from someone who tried, not criticism.
 - It is a dwg7 activity. It is not an OpenAerialMap or HOT project.
 - Not yet known: whether this works the same for the images of your country.
+
+> スライド案（3枚）: ① 何か ② 画面: `waterloo-overview.jpg`（画像と建物） ③ 画面: `waterloo-close.jpg`（近づいた所）と、まだ分からないこと。帰属表示は画面の下に出る
 
 > 確認（Claude）: 撮影期間 2026-02-07〜06-03、機体 DJI Mini 5 Pro、OAM 追加 2026-09-19 は README の表のまま。#1019、#1023 が背景。シエラレオネの研修員がいる。話す前に、本人への配慮を。https://dwg7.github.io/waterloo/
 
@@ -241,6 +247,8 @@ vary: Origin
 - hfu's own test (#1021): a rented DJI Mini 4 Pro, one night; the river office was consulted first; 5 datasets became orthophotos.
 - Not yet known: other places, other rules. The law and the procedure differ by place.
 
+> スライド案（2枚）: ① 3つの役割（人、AI、ドローン）の図。作図 ② 誰が決めるか（人が決めること、AI ができること）。画面は `dji-waypoints-hitl-github.jpg` があるが、視覚の効果は弱い。hfu の #1021 の画像を使う案もある（本人確認が要る）
+
 > 確認（Claude）: 作者は yuiseki さん。ツールの README は「実機 RC 2 での読み書きは未確認」と書き、#1021 では別実装で成功したと報告している。スライドでは、手順と責任の分担だけにとどめ、成功の数字は使わない（#1021 の 382枚、7,700円などは、話すなら hfu の言葉で）。 https://github.com/yuiseki/dji-waypoints-hitl
 
 #### dwg7/dorayaki
@@ -253,6 +261,8 @@ vary: Origin
 - It is an experiment, not a standard.
 - Not yet known: how it works on a wide area and on small PCs.
 
+> スライド案（3枚）: ① 地図タイルは、1つの場所に高さ1つしか持てない。橋と下の道路は入らない（作図） ② 画面: `dorayaki-kawazu.jpg`（川津ループ橋と谷。上からも下からも見える。ライブで見せる案も） ③ 数字とまだ分からないこと
+
 > 確認（Claude）: 数字（476 million points、83 MB）は README のまま。「Kenji Yoshida さんの方法の模倣から始めた」は #1031 の hfu のコメントの内容。https://dwg7.unopengis.org/dorayaki/
 
 #### kenjiyoshidahome2026-bit/ortho-earth
@@ -264,6 +274,8 @@ vary: Origin
 - One use: choose an area, load it first, then use it without a network.
 - It is the work of Kenji Yoshida. He also presents it in the dwg7 weekly meeting.
 - Not yet known: how it runs on older laptops (it uses the GPU).
+
+> スライド案（3枚）: ① 画面: `ortho-earth-top.jpg`（Equal to all, fair to the Earth） ② 画面: `ortho-earth-equal.jpg`（国が正しい大きさに見える世界地図） ③ 先に読み込めば、通信なしで使える。まだ分からないこと。**吉田さんの了解を取ってから**
 
 > 確認（Claude）: README の記述のまま（GPL-3.0）。「先に読み込めば通信なしで使える」は #1031 の吉田さんのコメント。紹介の許可を本人に取ること。 https://www.ortho-earth.com/
 
