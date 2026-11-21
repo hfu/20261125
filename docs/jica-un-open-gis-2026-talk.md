@@ -1,33 +1,16 @@
 # UN Open GIS Initiative
 2026-11-25（水）13:00–16:30、JICA 国家測量事業計画・管理
 
-## 時間配分（Claude の案、書き換えてください）
+## 時間配分（第二作）
 
-3ブロックを、1 : 0.5 : 1.5 時間にする。休憩は、14:00 と 15:15（各15分）。
+3ブロックを 1 : 0.5 : 1.5 時間。休憩は 14:00 と 15:15（各15分）。
 
 | 時刻 | 長さ | 内容 |
 |---|---|---|
-| 13:00–14:00 | 60分 | **ブロック1** ラズパイの実習（接続、CLI、curl） |
-| 14:00–14:15 | 15分 | 休憩（止まった人は、補助の人と続ける） |
-| 14:15–14:45 | 30分 | **ブロック2** UN Open GIS Initiative |
-| 14:45–15:15 | 30分 | **ブロック3** 前半: Smart Maps（dwg7）の紹介と、最近のプロジェクト2件 |
-| 15:15–15:30 | 15分 | 休憩 |
-| 15:30–16:30 | 60分 | **ブロック3** 後半: 最近のプロジェクト4件、締め、質疑 |
-
-内訳（分）:
-
-- ブロック1（60）: 導入と Background 5 / Wi-Fi 5 / IP 5 / SSH 15（止まった人の対応を含む）/ CLI 5 / curl とヘッダー解説 15 / 質疑 10
-- ブロック2（30）: OSS と GSI Maps 5 / Initiative の成り立ち 8 / 共同議長 3 / DWG 5 / 仕組み 5 / 質疑 4
-- ブロック3 前半（30）: dwg7 の紹介 8 / bvmap-koicha 11 / snow-hokkaido 11
-- ブロック3 後半（60）: waterloo 11 / dji-waypoints-hitl 11 / dorayaki 11 / ortho-earth 11 / 締め 8 / 質疑・議論 8
-
-時間の再配分案（Claude、ラオス・FERSPAS・QMP を足す場合）:
-
-- ブロック2: 「Open with Official」3分と QMP 4分を足すと、合計 7分増える。他から 7分を削る（OSS と GSI Maps 5→3、DWG 5→3、仕組み 5→3、質疑 4→2 など）。
-- ブロック3（プロジェクトに使える時間は、約63分）: ラオス 12、FERSPAS 9、bvmap-koicha 8、snow-hokkaido 8、dorayaki 9、ortho-earth 8、dji-waypoints-hitl 5、waterloo 4。**waterloo か dji を、任意（時間が余ったら）にする**案もある。
-
-枚数の見込み: ブロック1 約20枚、ブロック2 約12枚、ブロック3 約25枚。合計 約55〜60枚。
-前提: 各プロジェクト 11分は、画面を見せる時間を含む。説明のスライドは、1項目あたり 2〜3枚。
+| 13:00–14:00 | 60分 | **ブロック1** ラズパイの実習: 導入 5 / Wi-Fi 5 / IP 5 / SSH 15 / CLI 5 / curl とヘッダー 15 / 質疑 10 |
+| 14:15–14:45 | 30分 | **ブロック2** Initiative: OSS と GSI Maps 4 / Open with Official 3 / Initiative 4 / UNVT Portable 2 / 共同議長 2 / DWG 3 / QMP 4 / 仕組み 4 / 質疑 4 |
+| 14:45–15:15 | 30分 | **ブロック3 前半**: dwg7 の紹介 3 / AI 3 / 概観 1 / ラオス 14 / FERSPAS 9 |
+| 15:30–16:30 | 60分 | **ブロック3 後半**: bvmap-koicha 8 / snow-hokkaido 8 / waterloo 6 / dji 7 / dorayaki 8 / ortho-earth 7 / AX 4 / 締め 5 / 質疑 7 |
 
 ## 0. What we do this afternoon
 > 13:00–13:05（5分）。次の「Background」も含む。
@@ -157,6 +140,7 @@ vary: Origin
 - GSI Maps: a geoportal built with 100% open source. The code is on GitHub.
 - Official data and OpenStreetMap, together, in private-sector web maps.
 - Through sharing, GIS people build partnerships among problem solvers. Trust comes from software, data and people.
+- Nothing is perfect, so complementing each other is normal.
 
 > 確認（Claude）: 資料の見出しと項目のみを写した。数字は無い。「Open with Official」の説明は、hfu の言葉で。
 
@@ -270,7 +254,7 @@ vary: Origin
 
 #### Laos: Vientiane (QMP, height-coverage, zukaku)
 
-> 12分（4枚）。Claude の草稿。**結果と学びは、hfu が書く。** 11/20 の現地作業の結果は、私は知らないので、空欄にしてある。ラオスの研修員に、検証やコメントを求めない。
+> 14分。hfu の回答（2026-11-21）を反映済み。ラオスの研修員に、検証やコメントを求めない。
 
 - Need: a detailed map for the Chanthabury district detailed plan, around the Chao Anouvong Stadium in Vientiane.
   - The mapping supports pedestrian-first planning, universal design and public-space quality.
@@ -280,12 +264,25 @@ vary: Origin
   - In one place, a World Bank building was finished in Bing and still under construction in Esri. Imagery has a date.
 - Finding: in the area, almost no building has a height or a number of floors in OpenStreetMap (height-coverage: 12 of 3,654 buildings, seen on 2026-11-21).
 - Idea: count the floors by eye, and enter them. Printed paper maps (zukaku) for the field. Zoning on a base map (vientiane-planning-map).
-- 20 November, in the field: [hfu が書く: 何を、何人で、どこまで。写真2枚は `assets/laos-field-1.jpg`、`laos-field-2.jpg`]
-- Not yet known: [hfu が書く]
+- 20 November, in the field: about thirty people from the urban planning department and a national university walked for about an hour. We counted the floors of buildings by eye, and entered them into OpenStreetMap.
+  - A few minutes of lecture was enough. You do not need to be an expert.
+  - Counting floors was a compromise.
+- The hardest part: deciding which data items the project really needs.
+- Next time: work more closely with NGOs that do open mapping.
 
 > スライド案: ① 必要（スタジアム周辺、歩行者優先） ② 背景画像の比較（Bing と Esri。日付の違い） ③ 画面: `assets/screens/height-coverage-vientiane.jpg`（0% の画面）と、zukaku ④ 現地の写真2枚（顔なし）と、結果（hfu が書く）
 >
 > 確認（Claude）: UNopenGIS/7 の #873（2026-03-04 以降のコメント）、dwg7/height-coverage、dwg7/vientiane-planning-map、dwg7/zukaku による。「階数を目視で数える」仮説は、#988 の hfu の記述。Bing と Esri の比較は mapconcierge さんのコメント。建物の数（12 / 3,654）は、撮影した画面の値で、日々変わる。
+
+#### I tried it myself
+
+> 3分（ラオスの直後）。hfu の回答（2026-11-21）による。
+
+- I know the needs and the costs. So I build part of the software myself.
+- Vientiane: the published zoning data (Virgo), made into vector tiles.
+- Papua New Guinea: the published data of NLUIMS, made into vector tiles.
+
+> スライド案: ① 文面 ② 画面: `assets/screens/vientiane-planning-map.jpg`
 
 #### dwg7/ferspas-html-demo (with FAO)
 
@@ -403,7 +400,7 @@ vary: Origin
 - Time-boxed: the external effort stops at the end of the fiscal year. Whatever is useful can be reused or imitated by anyone. Nothing forces it to continue.
 - Principle: "Absence is information." We do not fill gaps with invented data.
 
-*Footer: An experiment by Hidenori Fujimura (hfu). Not an official project of GSI or the City of Asahikawa. Does not imply participation or endorsement by any organization.*
+*Footer: An experiment by Hidenori Fujimura (hfu), carried out within the dwg7 framework. Not an official project of GSI or the City of Asahikawa. Does not imply participation or endorsement by any organization.*
 
 #### Slide B: first step
 
@@ -413,8 +410,11 @@ vary: Origin
 - Done: source, terms of use and coordinate system recorded; reprojected (JGD2011 / Plane Rectangular zone XII → WGS84); displayed at the correct position; terrain (GSI elevation) added.
 - Evidence boundary: this is a route network, NOT the actual plowing status. Snow extent is not snow depth. A rendering is not an observation.
 - Open question: whose problem in Asahikawa can this connect to?
+- Not yet known: do people use maps at all? If so, in what situations?
 
-*Image: `docs/snow-asahikawa/screenshot-002-terrain.jpg` in the AX repository（**未入手**。AX 側から受け取る）。Basemap: bvmap-koicha, a dwg7 activity, not an official GSI product; GSI optimized vector tiles and elevation tiles. City data: CC BY 2.1 JP, attribution required.*
+*Image: `assets/screens/ax-asahikawa-snow-routes-en.jpg`（英語凡例版、取り込み済み）。字幕（そのまま使える。AX 側の案）:*
+
+> This image modifies the following work: Urban snow-removal routes, City of Asahikawa, Creative Commons Attribution 2.1 Japan (CC BY 2.1 JP, http://creativecommons.org/licenses/by/2.1/jp/). Modified and displayed by hfu. Hillshade: GSI elevation tiles. Basemap: bvmap-koicha-starlight (derived from GSI optimized vector tiles; a dwg7 activity, not an official GSI product). Not an official project of GSI or the City of Asahikawa. The data is a route network, not actual plowing status.
 
 #### Figure
 
@@ -422,12 +422,22 @@ vary: Origin
 Under the arrows: "built from what exists" | "shown, then broken by local people" | "stop, hand over, or disappear: all are results"
 Caption: "Make it strong enough to reach. Strike it and see whether it resonates."
 
-> 確認（Claude）: 上の英文は、AX セッションのメッセージをそのまま写した（2026-11-21）。「成果はまだない。地域に響いたかどうかは未観測」と、AX 側が明記している。市のデータの再配布条件は、このレイヤー固有では未確認（AX 側）。hfu/ax は private で、main には未 push（作業は worktree のブランチ）。
+> 確認（Claude）: 上の英文は、AX セッションのメッセージをそのまま写した（2026-11-21）。市のデータの条件は、AX 側の読み取りでは「出典と改変の表記を付ければ載せられる」。**hfu の判断が要る点:** 除雪路線網図が、都市計画基本図と数値地図25000を用いて作成されているため、路線の線だけの画像でも、測量成果の使用承認が要るか。確認先は、旭川市 行財政改革部 行政DX課。「成果はまだない。地域に響いたかどうかは未観測」と、AX 側が明記している。市のデータの再配布条件は、このレイヤー固有では未確認（AX 側）。hfu/ax は private で、main には未 push（作業は worktree のブランチ）。
 
 ### Closing
 
-> 8分（16:14–16:22）。**未記入。** 次の材料がある: 実習のつなぎ戻し（「皆さんは、誰かが用意した機械に、自分で入った」）、References（unopengis.org、dwg7.unopengis.org、dwg7.unopengis.org/guide）、*Imperfection is the natural state. That is why we combine efforts.* の置き場所。
+> 5分。hfu の回答による。
+
+- Today, you connected to a server in this room.
+- dwg7 tests new technologies in the same way: small, in public, with the conditions written down.
+- **Imperfection is natural. So let us connect.**
+
+### References
+
+- UN Open GIS Initiative: https://unopengis.org
+- dwg7: https://dwg7.unopengis.org
+- dwg7 guide: https://dwg7.unopengis.org/guide
 
 ### Questions and discussion
 
-> 8分（16:22–16:30）。**未記入。**
+> 7分。質疑の冒頭の問いは、その場の流れで決める（hfu）。
