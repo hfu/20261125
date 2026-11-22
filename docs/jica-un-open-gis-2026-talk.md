@@ -7,9 +7,9 @@
 
 | 時刻 | 長さ | 内容 |
 |---|---|---|
-| 13:00–14:00 | 60分 | **ブロック1** ラズパイの実習: 導入 5 / Wi-Fi 5 / IP 5 / SSH 15 / CLI 5 / curl とヘッダー 15 / 質疑 10 |
-| 14:15–14:45 | 30分 | **ブロック2** Initiative: OSS と GSI Maps 4 / Open with Official 3 / Initiative 4 / UNVT Portable 2 / 共同議長 2 / DWG 3 / QMP 4 / 仕組み 4 / 質疑 4 |
-| 14:45–15:15 | 30分 | **ブロック3 前半**: dwg7 の紹介 3 / AI 3 / 概観 1 / ラオス 14 / FERSPAS 9 |
+| 13:00–14:00 | 60分 | **ブロック1** ラズパイの実習: 導入 5 / Wi-Fi 5 / IP 5 / SSH 15 / Unix・CLI 7 / curl とヘッダー 15 / つなぎと四つの問い 3 / 質疑 7 |
+| 14:15–14:35 | 20分 | **ブロック2** Initiative: OSS と GSI Maps 4 / Open with Official 3 / Initiative 4 / 共同議長 2 / DWG 3 / 質疑 4 |
+| 14:35–15:15 | 40分 | **ブロック3 前半**: dwg7 の紹介 3 / 仕組み 4 / UNVT Portable 2 / OSM と公式データ 2 / QMP 4 / AI 3 / 概観 1 / ラオス 14 / FERSPAS 7 |
 | 15:30–16:30 | 60分 | **ブロック3 後半**: bvmap-koicha 8 / snow-hokkaido 8 / waterloo 6 / dji 7 / dorayaki 8 / ortho-earth 7 / AX 4 / 締め 5 / 質疑 7 |
 
 ## 0. What we do this afternoon
@@ -23,7 +23,7 @@ A part of the web mapping series (this morning - tomorrow)
 
 ## 0. Background
 
-In national geospatial information authorities, we produce geospatial information. We also need to know how it is used.
+In national geospatial information authorities, we produce geospatial information. We also need to know how it is best used.
 
 I make use of my ICT (information and communications technologies) background to promote the use of geospatial information in both inside and outside the government. 
 
@@ -36,7 +36,7 @@ Each server is very small as a credit card and as cheap as $100.
 It is called Raspberry Pi 4B. 
 
 They are located in the cabinet in this room. 
-We will be using the Raspberry Pi 4B tomorrow. 
+We will be using the Raspberry Pi 4B more tomorrow. 
 
 So, let us test if it works for you. 
 
@@ -77,7 +77,13 @@ Host name is optional.
 - exit
 
 You are now logged in to the server. 
-You are now a Unix user. 
+You are now a Unix user.
+
+- What is Unix?
+  - Unix began in the 1970s.
+  - Linux, macOS, Android and iOS are its relatives.
+  - Most of the servers of the Internet run Unix-like systems.
+  - The Raspberry Pi in front of you runs Linux. 
 
 ### Power of command line interface (CLI)
 > 5分（–13:35）
@@ -115,10 +121,32 @@ vary: Origin
 
 ### (Several slides to explain some headers)
 
+- `-I` asks for the headers only: the information about the file, not the file itself.
+
+### You used a map the way software does
+
+> 1分。軸の導入（hfu が「軸にする」と決定、2026-11-22）。
+
+- You asked for one tile, by its address: zoom / x / y.
+- The server answered with an image.
+- Every web map works this way: software asks, a server answers.
+- Who asks for GSI Maps? Not only our own system.
+
+### Four questions to ask of any map
+
+> 2分。**全体の軸。** 概観のスライドと、各プロジェクトの最初のスライド（タグ）、締めで、この4つに戻る。
+
+1. Who uses it? — Not only the people who made it.
+2. What for? — A map exists for a need, not for itself.
+3. How old is it? — Every piece of information has a date.
+4. What is missing? — A gap is information too.
+
 ### Questions on Raspberry Pi?
-> 10分（–14:00）。休憩中も、止まった人の対応を続ける。
+> 7分（–14:00）。休憩中も、止まった人の対応を続ける。
 
 ## 2. UN Open GIS Initiative
+
+> 入口の1行: *Who uses GSI Maps? Not only our own system.*
 > **ブロック2: 14:15–14:45（30分）**
 
 - Open Source Software and GSI Maps
@@ -137,8 +165,7 @@ vary: Origin
 > 3分（Claude の草稿。出典: hfu の資料 2025-06-26「Strategic Use of Geospatial Information」（UNopenGIS/qmp の docs/decks/2025-06-timor-leste.pdf）。東ティモールの研修員がいるので、本人に見られる前提で）
 
 - From "Open or Official" to "Open with Official".
-- GSI Maps: a geoportal built with 100% open source. The code is on GitHub.
-- Official data and OpenStreetMap, together, in private-sector web maps.
+- GSI Maps: a geoportal built with 100% open source software. The code is on GitHub.
 - Through sharing, GIS people build partnerships among problem solvers. Trust comes from software, data and people.
 - Nothing is perfect, so complementing each other is normal.
 
@@ -151,17 +178,6 @@ vary: Origin
 - Hidenori joined UN Geospatial Information Section from 2017 to 2019. 
   - UN Open GIS Initiative + UN Maps = UN Vector Tile Toolkit (2018-)
   
-### UNVT Portable
-
-> 2〜3分（Claude の案。ブロック2、Initiative の成り立ちの直後。軽く入れる）。教室のラズパイが、なぜここにあるかの説明になる。明日の松澤さんの回への橋にもなる。
-
-- UN Vector Tile Toolkit (UNVT) has a portable form: a small server for web maps, first made on a Raspberry Pi.
-- Smart Maps Portable (2024): Raspberry Pi 4B, a battery, a 2 TB SSD and a GNSS antenna. It ran 18 hours without external power, and served more than 25 clients over Wi-Fi.
-- The Raspberry Pi in this room is a descendant. "niroku" is a new implementation of UNVT Portable, for this JICA course.
-- Tomorrow, you will use it to make tiled maps.
-
-> 確認（Claude）: 2024年の資料（jica-2411）の記述（18時間、25台以上）は、hfu 自身の資料のまま。niroku の説明は、unvt/niroku のリポジトリの説明（"A new implementation of UNVT Portable"、2025-10-13 作成）による。「明日、タイル地図を作る」は、松澤さんの教材の記述（正本）による。UNVT Portable の最初の実装がいつか、公開の記録からは確認できていない。
-
 ### UN Open GIS Initiative: current co-chairs
 > 3分
 
@@ -179,17 +195,16 @@ vary: Origin
 - DWG7: Smart Maps
 - DWG8: IGIF implementation
 
-### JICA and the Initiative: Quick Mapping Project
+## 3. Smart Maps (dwg7) activities
+> **ブロック3: 14:45–15:15（30分）、休憩、15:30–16:30（60分）**
+> dwg7 の紹介 8分（以下4項目）
 
-> 4分（Claude の草稿。ブロック2の最後、「How it works」の前。聴衆が JICA の研修員なので、外せないと思う。時間は、他の項目から割く）
-
-- Quick Mapping Project (QMP): a JICA co-creation, innovation and circulation initiative, powered by UN Smart Maps.
-- Quick Mapping: make maps quickly, and make them usable at once, for the users' needs. It builds on OpenStreetMap.
-- Its idea: "It's easy to be brave enough to map."
-- 2025-07-09, "Q Day" at JICA headquarters: hybrid, one topic every 30 minutes, the rest is free mapping and discussion.
-- The Laos work (next block) is part of QMP.
-
-> 確認（Claude）: UNopenGIS/qmp の docs（英語）、q20250709 の README による。Q Day の内容は「ドラフト、生成 AI が作成した情報を含む」と書かれている。QMP の成果（地図の量、参加者数）は、読んだ範囲に無い。数字は使わない。2025年6月の東ティモール向けの資料でも、QMP を最近の活動として紹介している。
+- DWG7: Smart Maps
+  - A group for individual developers
+  - Web maps for smart decisions
+  - Vision: keep web maps open.
+  - Mission: test new technologies. 
+- Rule: share projects or topics under gh:unopengis or gh:dwg7. 
 
 ### How it works
 
@@ -205,16 +220,25 @@ vary: Origin
 
 > 確認（Claude）: 週次の時間と「公開の記録が一次の記録」は dwg7 guide（2026-11-11 確認、guide 自身が記録）による。月次の VTC は roadmap の README による。
 
-## 3. Smart Maps (dwg7) activities
-> **ブロック3: 14:45–15:15（30分）、休憩、15:30–16:30（60分）**
-> dwg7 の紹介 8分（以下4項目）
+### UNVT Portable
 
-- DWG7: Smart Maps
-  - A group for individual developers
-  - Web maps for smart decisions
-  - Vision: keep web maps open.
-  - Mission: test new technologies. 
-- Rule: share projects or topics under gh:unopengis or gh:dwg7. 
+> 2〜3分（Claude の案。ブロック2、Initiative の成り立ちの直後。軽く入れる）。教室のラズパイが、なぜここにあるかの説明になる。明日の松澤さんの回への橋にもなる。
+
+- UN Vector Tile Toolkit (UNVT) has a portable form: a small server for web maps, first made on a Raspberry Pi.
+- Smart Maps Portable (2024): Raspberry Pi 4B, a battery, a 2 TB SSD and a GNSS antenna. It ran 18 hours without external power, and served more than 25 clients over Wi-Fi.
+- The Raspberry Pi in this room is a descendant. "niroku" is a new implementation of UNVT Portable, for this JICA course.
+- Tomorrow, you will use it to make tiled maps.
+
+> 確認（Claude）: 2024年の資料（jica-2411）の記述（18時間、25台以上）は、hfu 自身の資料のまま。niroku の説明は、unvt/niroku のリポジトリの説明（"A new implementation of UNVT Portable"、2025-10-13 作成）による。「明日、タイル地図を作る」は、松澤さんの教材の記述（正本）による。UNVT Portable の最初の実装がいつか、公開の記録からは確認できていない。
+
+### OpenStreetMap and official data
+
+> 2分（草稿。「OpenStreetMap の話は、OSS の話と書き分ける」というレビューにもとづき、「Open with Official」から分けた）
+
+- OpenStreetMap: map data that anyone can edit and use.
+- Official data and OpenStreetMap, together, in private-sector web maps.
+  - For example, maps of Japan in MapTiler.
+- Each has gaps. Together, they complement each other.
 
 ### dwg7 and AI
 
@@ -232,7 +256,7 @@ vary: Origin
 ### Recent projects
 > 1件 約11分。前半（休憩前）は2件、後半は4件。
 
-> **概観のスライド（1分）。** 聴衆が、これから見る9件の全体を先に持てるように、3つに分ける。免責は、ここで1回だけ言う: 「これらは dwg7 の活動で、どの組織の公式な製品でもない」。各プロジェクトのスライドの下には、出典の表記だけを残す。
+> **概観のスライド（1分）。** 先頭に「Look for the four questions in each project.」。各プロジェクトの最初のスライドの右上に、答える問いのタグ（WHO USES IT / WHAT FOR / HOW OLD / WHAT IS MISSING）を付ける。割り当て（hfu が直す）: ラオス＝4つすべて、FERSPAS＝WHO・FOR、bvmap-koicha＝MISSING、snow-hokkaido＝OLD・MISSING、waterloo＝OLD、dorayaki＝MISSING、AX＝WHO・FOR。 聴衆が、これから見る9件の全体を先に持てるように、3つに分ける。免責は、ここで1回だけ言う: 「これらは dwg7 の活動で、どの組織の公式な製品でもない」。各プロジェクトのスライドの下には、出典の表記だけを残す。
 
 - **Starting from a need:** Laos (Vientiane), FERSPAS (FAO)
 - **Data:** bvmap-koicha (GSI tiles), snow-hokkaido (satellite), waterloo (drone imagery)
@@ -251,6 +275,18 @@ vary: Origin
 > 6. ortho-earth — 世界地図で、国が正しい大きさに見える（Equal Earth）。最後の印象。
 >
 > 各項目は、必要 → 試したこと → 分かったこと → まだ分からないこと、の型。「まだ分からないこと」に *Imperfection is the natural state. That is why we combine efforts.* を置く場所がある。
+
+#### JICA and the Initiative: Quick Mapping Project
+
+> 4分（Claude の草稿。ブロック2の最後、「How it works」の前。聴衆が JICA の研修員なので、外せないと思う。時間は、他の項目から割く）
+
+- Quick Mapping Project (QMP): a JICA co-creation, innovation and circulation initiative, powered by UN Smart Maps.
+- Quick Mapping: make maps quickly, and make them usable at once, for the users' needs. It builds on OpenStreetMap.
+- Its idea: "It's easy to be brave enough to map."
+- 2025-07-09, "Q Day" at JICA headquarters: hybrid, one topic every 30 minutes, the rest is free mapping and discussion.
+- The Laos work (next block) is part of QMP.
+
+> 確認（Claude）: UNopenGIS/qmp の docs（英語）、q20250709 の README による。Q Day の内容は「ドラフト、生成 AI が作成した情報を含む」と書かれている。QMP の成果（地図の量、参加者数）は、読んだ範囲に無い。数字は使わない。2025年6月の東ティモール向けの資料でも、QMP を最近の活動として紹介している。
 
 #### Laos: Vientiane (QMP, height-coverage, zukaku)
 
@@ -426,8 +462,10 @@ Caption: "Make it strong enough to reach. Strike it and see whether it resonates
 
 ### Closing
 
-> 5分。hfu の回答による。
+> 5分。冒頭の主張と四つの問いに戻る。最後の1枚は *Imperfection is natural. So let us connect.*
 
+- We produce geospatial information. We also need to know how it is best used.
+- Who uses it? What for? How old is it? What is missing?
 - Today, you connected to a server in this room.
 - dwg7 tests new technologies in the same way: small, in public, with the conditions written down.
 - **Imperfection is natural. So let us connect.**
