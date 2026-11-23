@@ -497,3 +497,9 @@ Caption: "Make it strong enough to reach. Strike it and see whether it resonates
 - dji-waypoints-hitl: UNopenGIS/7 の issue #1021（yuiseki、2026-10-11）から取材。画像4枚を `assets/screens/dji-1021-*.png` に保存（hero=オルソ画像、sparse/dense/upstream=RC 2 の画面）。スライドは4枚: 課題（100g超の機体をレンタル 7,700円/泊、河川敷、管理事務所に事前相談）、人・エージェント・人（RC 2 の画面）、結果（285枚→オルソ画像1枚、ODM fast mode。既存地図との位置精度は未確認）、誰が決めるか。
 - AX: 3枚→2枚（図の1枚を削除、本文を短縮）。
 - ortho-earth の GPL-3.0: 「取り込んだページは自分の JavaScript も公開する。商用ライセンスの提供もある」。
+
+## v9 の変更（2026-11-23）
+- スライド4: 「Senior advisor to JICA, 2024–2026」と過去の役職として明記。UN 在籍は 2017–2019。
+- スライド21: optionality = 多くのベンダーが参加できる／ライブラリを入れ替えられる／クライアントが GSI タイル等を選べる。interoperability = データと地図が他者のツールと連携する。
+- 新スライド（Waterloo の最後、C の直前）: Freetown, Hill Cot の建物外周線（HOT Task 40992、2026-07-27 版）をドローン画像に重ねた図。出典は hfu.github.io/40992。検証は進行中と明記。
+- AX: hfu.github.io/ax/ を1枚目に、地図 URL を2枚目の注記に追加（リポジトリは非公開。URL のみ）。
