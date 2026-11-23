@@ -4,8 +4,8 @@
 
 ## まず読む
 1. `CLAUDE.md`（方向性、作業の流れ、決定事項、書かないこと）
-2. `docs/jica-un-open-gis-2026-talk.md`（トークのマークダウン。正本）
-3. `docs/jica-un-open-gis-2026-talk-review-notes.md`、`docs/dorayaki-consult-2026-11-23.md`（照合と相談のメモ）
+2. `documents/jica-un-open-gis-2026-talk.md`（トークのマークダウン。正本）
+3. `documents/jica-un-open-gis-2026-talk-review-notes.md`、`documents/dorayaki-consult-2026-11-23.md`（照合と相談のメモ）
 
 ## 新しい方向性
 - 軸は「地理空間情報は、作るだけでなく、どう使われるかを知る」。**四つの問い**（Who uses it? / What for? / How old is it? / What is missing?）に、概観、各プロジェクト、締めで戻る。

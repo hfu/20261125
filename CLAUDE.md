@@ -14,10 +14,11 @@
 - 文体は「高密度・低圧」。偉そうにしない。
 
 ## 作業の流れ
-- **正本: `docs/jica-un-open-gis-2026-talk.md`**（トークのマークダウン）。hfu が機内などで直す。迷ったら、これ。構造版（`jica-un-open-gis-2026.md`、KCAIM、`deck/jica-un-open-gis-2026-structure.pptx`）は、背景の資料。
+- **正本: `documents/jica-un-open-gis-2026-talk.md`**（トークのマークダウン）。hfu が機内などで直す。迷ったら、これ。構造版（`jica-un-open-gis-2026.md`、KCAIM、`deck/jica-un-open-gis-2026-structure.pptx`）は、背景の資料。
 - 生成: `src/build-talkN.js`（Nは版。最新が現行）→ `deck/jica-un-open-gis-2026-talk-vN.pptx`。PPTX を直接編集しない。直すのは、マークダウンと生成スクリプト。
 - レビューの回し方: ①版ができたらコミットしてタグ（`talk-vN-日付`）を付ける。②hfu が、`deck/review/` に、レビュー版（別名または同名）を置く。③私が、タグの版との差分（文字、ノート、順序、画像）を取り、一覧にして見せる。④マークダウンと生成スクリプトに反映し、次の版を作る。
 - 検証: `python3 tools/verify.py --pptx deck/…vN.pptx --vt-slides 7 --ip-slides 8 --no-notes-check --no-status`（`vectortiles` は Wi-Fi のスライドだけ、IP は表のスライドだけ。64桁の16進文字列、MAC、管理用ホスト名・ドメインがゼロ。隠しスライド・コメントなし。PDF と目視用のコンタクトシートを `build-tmp/` に作る）。スライドの番号が変わったら、`--vt-slides` と `--ip-slides` を直す。
+- フォルダ: `documents/` は作業用の文書（正本のマークダウン、メモ）。`docs/` は公開用（GitHub Pages）で、最終の PPTX と PDF と `index.html` だけを置く。
 - コミットは、hfu が頼んだときだけ。author は `18297+hfu@users.noreply.github.com`。
 
 ## 言語
@@ -56,4 +57,4 @@
 - 実機・フリートへの接続は、hfu が指示したときだけ（読み取りのみ）。変更や調査が要るときは、依頼文を書いて hfu に渡す（`m3xx-fleet-ops` の運用セッションが実行する）。
 
 ## 未解決
-ラオス 11/20 の結果の追記、OSM の1枚の中身、タグの割り当て、dorayaki（sasebo の画像と計画）、Windows の ssh（PowerShell）の当日確認、研修機の事前確認（依頼書 `docs/jica-un-open-gis-2026-ops-request-preflight.md`、未送付）、フォント（Sora と IBM Plex Mono）の導入、デザインの調整（ロジックが固まってから）。
+ラオス 11/20 の結果の追記、OSM の1枚の中身、タグの割り当て、dorayaki（sasebo の画像と計画）、Windows の ssh（PowerShell）の当日確認、研修機の事前確認（依頼書 `documents/jica-un-open-gis-2026-ops-request-preflight.md`、未送付）、フォント（Sora と IBM Plex Mono）の導入、デザインの調整（ロジックが固まってから）。

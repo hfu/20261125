@@ -76,7 +76,7 @@ Host name is optional.
 - password: (say it in class)  <!-- 共有SSHパスワードの値は、リポジトリに書かない決まり。貼り付け時に伏せた。元の記述に戻すかは hfu が決める。 -->
 
 - man ls (press q to quit)
-- exit
+- ls   (v5 のレビューで、exit から変更)
 
 You are now logged in to the server. 
 You are now a Unix user.
@@ -133,7 +133,12 @@ vary: Origin
 - You asked for one tile, by its address: zoom / x / y.
 - The server answered with an image.
 - Every web map works this way: software asks, a server answers.
-- Who asks for GSI Maps? Not only our own system.
+- Who asks for GSI's tiles? Many programs, not only one web site:
+  - The GSI Maps web site: https://maps.gsi.go.jp/
+  - A disaster map system: https://dimaps.mlit.go.jp/dimaps/
+  - Desktop GIS, like QGIS
+
+> 「Who uses GSI Maps? Not only our own system.」は、意味が分かりにくい、という hfu の指摘（2026-11-23）で、上のように書き直した。ブロック2の入口の1行は、「From GSI Maps to the United Nations」にした。
 
 ### Four questions to ask of any map
 
@@ -144,12 +149,18 @@ vary: Origin
 3. How old is it? — Every piece of information has a date.
 4. What is missing? — A gap is information too.
 
+### Disconnect from your Raspberry Pi 4B
+
+> 1分（v5 のレビューで追加）
+
+- `$ exit`
+
 ### Questions on Raspberry Pi?
 > 7分（–14:00）。休憩中も、止まった人の対応を続ける。
 
 ## 2. UN Open GIS Initiative
 
-> 入口の1行: *Who uses GSI Maps? Not only our own system.*
+> 入口の1行: *From GSI Maps to the United Nations*
 > **ブロック2: 14:15–14:45（30分）**
 
 - Open Source Software and GSI Maps
@@ -160,7 +171,7 @@ vary: Origin
 ### Open Source Software and GSI Maps
 > 5分
 
-- Open source has been the procurement strategy of GSI Maps since 2013
+- GSI Maps, built on open source software, was released in 2013
   - Optionality and interoperability
   
 ### Open with Official
@@ -168,9 +179,10 @@ vary: Origin
 > 3分（Claude の草稿。出典: hfu の資料 2025-06-26「Strategic Use of Geospatial Information」（UNopenGIS/qmp の docs/decks/2025-06-timor-leste.pdf）。東ティモールの研修員がいるので、本人に見られる前提で）
 
 - From "Open or Official" to "Open with Official".
-- GSI Maps: a geoportal built with 100% open source software. The code is on GitHub.
+- GSI Maps: a geoportal built with 100% open source software. The code is on GitHub, “a social network of software developers”.
 - Through sharing, GIS people build partnerships among problem solvers. Trust comes from software, data and people.
 - Nothing is perfect, so complementing each other is normal.
+- Open and official combine efforts, rather than compete with each other.
 
 > 確認（Claude）: 資料の見出しと項目のみを写した。数字は無い。「Open with Official」の説明は、hfu の言葉で。
 
@@ -191,12 +203,12 @@ vary: Origin
 ### Domain Working Groups (DWGs)
 > 5分
 
-- DWG1: Hybrid GIS Infrastructure (inactive)
-- DWG2: Capacity Building (inactive)
+- DWG1: Hybrid GIS Infrastructure (not very active)
+- DWG2: Capacity Building (not very active)
 - DWG5: Geo-AI
 - DWG6: OpenDroneMap
 - DWG7: Smart Maps
-- DWG8: IGIF implementation
+- DWG8: IGIF implementation (recently created)
 
 ## 3. Smart Maps (dwg7) activities
 > **ブロック3: 14:45–15:15（30分）、休憩、15:30–16:30（60分）**
@@ -208,6 +220,7 @@ vary: Origin
   - Vision: keep web maps open.
   - Mission: test new technologies. 
 - Rule: share projects or topics under gh:unopengis or gh:dwg7. 
+- Many tests (“proof of concept”) rather than finished projects.
 
 ### How it works
 
@@ -240,7 +253,7 @@ vary: Origin
 
 - OpenStreetMap: map data that anyone can edit and use.
 - Official data and OpenStreetMap, together, in private-sector web maps.
-  - For example, maps of Japan in MapTiler.
+  - For example, maps of Japan in MapTiler (explained by MapTiler): https://docs.maptiler.com/guides/map-tiling-hosting/data-hosting/japan-maps-in-maptiler-cloud
 - Each has gaps. Together, they complement each other.
 
 ### dwg7 and AI
@@ -252,16 +265,18 @@ vary: Origin
   - The JICA Quick Mapping Project took it as a first principle: "We co-create with generative AI."
 - Today, AI writes part of our code and records.
   - Many of the projects you will see were made with AI.
-- People decide. AI cannot see the site.
+- People decide.
 
 > 確認（Claude）: 公式サイトの記述（"large language model (LLM) users, and even LLMs"）は確認済み。2023年の例: yuiseki さんの TRIDENT（#141、2023-05-03）、「Raspberry Pi 上でも LLM は動く」（#208、2023-07-08）。yuiseki さんの2024年2月の発言「近い将来、十分に高度な AI を仲間として迎える備えが要る」（原文: *In the near future, we need to be prepared to welcome sufficiently advanced AI as our companions.*）が、UNopenGIS/qmp の docs/en/concepts.md に引用されている（確認済み）。スライドに引用するなら、この出典を明記する。
 
 ### Recent projects
+
+> v5 のレビュー（2026-11-23）で、QMP、FERSPAS、「Where in Japan?」、Laos の「Imagery has a date」「Field notes」「I tried it myself」、bvmap-koicha の「Not yet known」のスライドを、hfu が削除した。QMP と FERSPAS は「魅力的に提示できそうにない」ため。削除した内容は、必要なら話す。
 > 1件 約11分。前半（休憩前）は2件、後半は4件。
 
 > **概観のスライド（1分）。** 先頭に「Look for the four questions in each project.」。各プロジェクトの最初のスライドの右上に、答える問いのタグ（WHO USES IT / WHAT FOR / HOW OLD / WHAT IS MISSING）を付ける。割り当て（hfu が直す）: ラオス＝4つすべて、FERSPAS＝WHO・FOR、bvmap-koicha＝MISSING、snow-hokkaido＝OLD・MISSING、waterloo＝OLD、dorayaki＝MISSING、AX＝WHO・FOR。 聴衆が、これから見る9件の全体を先に持てるように、3つに分ける。免責は、ここで1回だけ言う: 「これらは dwg7 の活動で、どの組織の公式な製品でもない」。各プロジェクトのスライドの下には、出典の表記だけを残す。
 
-- **Starting from a need:** Laos (Vientiane), FERSPAS (FAO)
+- **Starting from a need:** Laos (Vientiane)
 - **Data:** bvmap-koicha (GSI tiles), snow-hokkaido (satellite), waterloo (drone imagery)
 - **Flying and seeing:** dji-waypoints-hitl, dorayaki, ortho-earth
 - **My next challenge:** AX (Asahikawa)
@@ -278,18 +293,6 @@ vary: Origin
 > 6. ortho-earth — 世界地図で、国が正しい大きさに見える（Equal Earth）。最後の印象。
 >
 > 各項目は、必要 → 試したこと → 分かったこと → まだ分からないこと、の型。「まだ分からないこと」に *Imperfection is the natural state. That is why we combine efforts.* を置く場所がある。
-
-#### JICA and the Initiative: Quick Mapping Project
-
-> 4分（Claude の草稿。ブロック2の最後、「How it works」の前。聴衆が JICA の研修員なので、外せないと思う。時間は、他の項目から割く）
-
-- Quick Mapping Project (QMP): a JICA co-creation, innovation and circulation initiative, powered by UN Smart Maps.
-- Quick Mapping: make maps quickly, and make them usable at once, for the users' needs. It builds on OpenStreetMap.
-- Its idea: "It's easy to be brave enough to map."
-- 2025-07-09, "Q Day" at JICA headquarters: hybrid, one topic every 30 minutes, the rest is free mapping and discussion.
-- The Laos work (next block) is part of QMP.
-
-> 確認（Claude）: UNopenGIS/qmp の docs（英語）、q20250709 の README による。Q Day の内容は「ドラフト、生成 AI が作成した情報を含む」と書かれている。QMP の成果（地図の量、参加者数）は、読んだ範囲に無い。数字は使わない。2025年6月の東ティモール向けの資料でも、QMP を最近の活動として紹介している。
 
 #### Laos: Vientiane (QMP, height-coverage, zukaku)
 
@@ -313,7 +316,7 @@ vary: Origin
 >
 > 確認（Claude）: UNopenGIS/7 の #873（2026-03-04 以降のコメント）、dwg7/height-coverage、dwg7/vientiane-planning-map、dwg7/zukaku による。「階数を目視で数える」仮説は、#988 の hfu の記述。Bing と Esri の比較は mapconcierge さんのコメント。建物の数（12 / 3,654）は、撮影した画面の値で、日々変わる。
 
-#### I tried it myself
+#### I tried it myself（v5 のレビューで、スライドは削除。話す）
 
 > 3分（ラオスの直後）。hfu の回答（2026-11-21）による。
 
@@ -322,31 +325,6 @@ vary: Origin
 - Papua New Guinea: the published data of NLUIMS, made into vector tiles.
 
 > スライド案: ① 文面 ② 画面: `assets/screens/vientiane-planning-map.jpg`
-
-#### dwg7/ferspas-html-demo (with FAO)
-
-> 9分（3枚）。Claude の草稿。「うまくいかなかった話」と「使われ方から始める」の両方になる。
-
-- Need: FAO publishes remote sensing data and analysis notebooks (FERSPAS). Public officials who cannot set up a programming environment cannot use them.
-- First try: fit our own architecture onto FERSPAS. We paused it on 18 September 2026.
-  - After reading FERSPAS's own user stories, I saw that we had fitted our architecture onto FERSPAS, instead of starting from how FERSPAS is used.
-- Second try: move the tasks that are already stable in the notebooks to transparent web pages, which run in a browser.
-  - Examples: an agricultural stress index (Italy), drained cropland over 31 years (Bangladesh), a water balance over 47 years.
-- "Explore in the experts' environment. Share stable tasks on the web."
-- Not yet known: whether other tasks and other users follow. The work is closed for now, and may reopen.
-
-> スライド案: ① 必要と、最初の試み（中断の理由） ② 画面（`dwg7.unopengis.org/ferspas-html-demo/` のケース。**未撮影**。撮るなら私が） ③ 「専門家の環境で探る。安定したものを Web で共有する」とまだ分からないこと
->
-> 確認（Claude）: UNopenGIS/7 の #1006（2026-09-18、FAO 側2名、yuiseki さん、hfu の4名の打合せ）、#1011、dwg7/ferspas57 の README による。FAO の方々の氏名は出さない。FAO のノートブックの引用は、出典（un-fao/FERSPAS_demo）を明記する。連携の名目（組織間か、作業部会間か）は、先方が柔軟だと書かれているが、スライドでは「FAO と連携」と書くか、hfu が判断する。
-
-#### Where in Japan?
-
-> 1分（休憩のあと、bvmap-koicha の前）。日本の例が4か所あるので、先に地図で示す。AX のスライドで、「旭川は、ここ」と戻れる。
-
-- Four places in the next examples: Hokkaido (Asahikawa: AX, snow-hokkaido), Tokyo (bvmap-koicha), Kawazu in Shizuoka (dorayaki), Sasebo in Nagasaki (dorayaki).
-- Hokkaido: the northernmost main island of Japan. About the size of Sierra Leone. Long, snowy winters. Asahikawa is inland and cold.
-
-> 図: `assets/screens/map-japan-four-places.jpg`（作図。陸地は Natural Earth、パブリックドメイン）。北海道を塗り分けない（北方領土の扱いが、敏感になるため、hfu の指示 2026-11-23）。面積の数字も出さない。シエラレオネとの比較は、概数にもとづく。
 
 #### dwg7/bvmap-koicha
 > 11分（14:45 + 8 = 14:53–15:04）
@@ -504,3 +482,18 @@ Caption: "Make it strong enough to reach. Strike it and see whether it resonates
 ### Questions and discussion
 
 > 7分。質疑の冒頭の問いは、その場の流れで決める（hfu）。
+
+
+## v8 の変更点（2026-11-23。生成スクリプト `src/build-talk8.js`）
+- レビュー（v7）の反映: DWG7（Who/What/How）、bvmap-koicha（タイルサイズの説明、「cha (茶) = tea; koicha (濃茶) = thick tea」）、snow-hokkaido（担当地域）、waterloo（2026年3月、JICA の senior advisor、題）、dorayaki 題、「Kenji Yoshida の方法」の1行を削除。
+- 「GSI Maps, built on open source software, was released in 2013.」（docs/pending-v8.md の反映）。
+- How it works に dorayaki の例を付け、「What “conditions written down” means」を追加。
+- waterloo: 2枚の画像の体裁を揃えた（16:9 に切り出し）。
+- dji-waypoints-hitl: リポジトリに画像がないため、README に沿った模式図（dwg7 作成、実データではない）を作成。2枚目は「誰が決めるか」。
+- dorayaki: 「What is a Gaussian splat?」（模式図）と、合成データの橋の画面（?fixture=bridge）を追加。
+- ortho-earth: 国連総会決議（2026-09-04、トーゴ提案、非拘束）のスライドを追加。MapLibre 互換は README の数字（137例中、同じ絵 91、同じ答え 43、2.4.0 時点）に直し、GPL-3.0 を明記。
+
+### v8 追記（2026-11-23、続き）
+- dji-waypoints-hitl: UNopenGIS/7 の issue #1021（yuiseki、2026-10-11）から取材。画像4枚を `assets/screens/dji-1021-*.png` に保存（hero=オルソ画像、sparse/dense/upstream=RC 2 の画面）。スライドは4枚: 課題（100g超の機体をレンタル 7,700円/泊、河川敷、管理事務所に事前相談）、人・エージェント・人（RC 2 の画面）、結果（285枚→オルソ画像1枚、ODM fast mode。既存地図との位置精度は未確認）、誰が決めるか。
+- AX: 3枚→2枚（図の1枚を削除、本文を短縮）。
+- ortho-earth の GPL-3.0: 「取り込んだページは自分の JavaScript も公開する。商用ライセンスの提供もある」。
