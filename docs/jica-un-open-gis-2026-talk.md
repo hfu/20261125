@@ -10,7 +10,7 @@
 | 13:00–14:00 | 60分 | **ブロック1** ラズパイの実習: 導入 5 / Wi-Fi 5 / IP 5 / SSH 15 / Unix・CLI 7 / curl とヘッダー 15 / つなぎと四つの問い 3 / 質疑 7 |
 | 14:15–14:35 | 20分 | **ブロック2** Initiative: OSS と GSI Maps 4 / Open with Official 3 / Initiative 4 / 共同議長 2 / DWG 3 / 質疑 4 |
 | 14:35–15:15 | 40分 | **ブロック3 前半**: dwg7 の紹介 3 / 仕組み 4 / UNVT Portable 2 / OSM と公式データ 2 / QMP 4 / AI 3 / 概観 1 / ラオス 14 / FERSPAS 7 |
-| 15:30–16:30 | 60分 | **ブロック3 後半**: bvmap-koicha 8 / snow-hokkaido 8 / waterloo 6 / dji 7 / dorayaki 8 / ortho-earth 7 / AX 4 / 締め 5 / 質疑 7 |
+| 15:30–16:30 | 60分 | **ブロック3 後半**: 日本の地図 1 / bvmap-koicha 7 / snow-hokkaido 8 / waterloo 5 / dji 6 / dorayaki 10 / ortho-earth 6 / AX 4 / 締め 5 / 質疑 8 |
 
 ## 0. What we do this afternoon
 > 13:00–13:05（5分）。次の「Background」も含む。
@@ -39,6 +39,8 @@ They are located in the cabinet in this room.
 We will be using the Raspberry Pi 4B more tomorrow. 
 
 So, let us test if it works for you. 
+
+- Video (YouTube, Raspberry Pi, 1:39): https://www.youtube.com/watch?v=ouhXh8thnQM — *We are Raspberry Pi*. (hfu が、v4 のレビューで追加)
 
 ### First: join the server Wi-Fi
 > 5分（13:05–13:10）
@@ -79,6 +81,7 @@ Host name is optional.
 You are now logged in to the server. 
 You are now a Unix user.
 
+- Video (YouTube, National Inventors Hall of Fame, 3:10): https://www.youtube.com/watch?v=g3jOJfrOknA — *Pushing the Limits of Technology: The Ken Thompson and Dennis Ritchie Story*。Unix が重要で、よいものだ、ということを、歴史から伝える。（長い版の候補: AT&T Archives, *UNIX: Making Computers Easier To Use*, 1982, 23分: https://www.youtube.com/watch?v=XvDZLjaCJuw。冒頭の2分だけ見せる手もある）
 - What is Unix?
   - Unix began in the 1970s.
   - Linux, macOS, Android and iOS are its relatives.
@@ -336,6 +339,15 @@ vary: Origin
 >
 > 確認（Claude）: UNopenGIS/7 の #1006（2026-09-18、FAO 側2名、yuiseki さん、hfu の4名の打合せ）、#1011、dwg7/ferspas57 の README による。FAO の方々の氏名は出さない。FAO のノートブックの引用は、出典（un-fao/FERSPAS_demo）を明記する。連携の名目（組織間か、作業部会間か）は、先方が柔軟だと書かれているが、スライドでは「FAO と連携」と書くか、hfu が判断する。
 
+#### Where in Japan?
+
+> 1分（休憩のあと、bvmap-koicha の前）。日本の例が4か所あるので、先に地図で示す。AX のスライドで、「旭川は、ここ」と戻れる。
+
+- Four places in the next examples: Hokkaido (Asahikawa: AX, snow-hokkaido), Tokyo (bvmap-koicha), Kawazu in Shizuoka (dorayaki), Sasebo in Nagasaki (dorayaki).
+- Hokkaido: the northernmost main island of Japan. About the size of Sierra Leone. Long, snowy winters. Asahikawa is inland and cold.
+
+> 図: `assets/screens/map-japan-four-places.jpg`（作図。陸地は Natural Earth、パブリックドメイン）。北海道を塗り分けない（北方領土の扱いが、敏感になるため、hfu の指示 2026-11-23）。面積の数字も出さない。シエラレオネとの比較は、概数にもとづく。
+
 #### dwg7/bvmap-koicha
 > 11分（14:45 + 8 = 14:53–15:04）
 
@@ -395,18 +407,31 @@ vary: Origin
 > 確認（Claude）: 作者は yuiseki さん。ツールの README は「実機 RC 2 での読み書きは未確認」と書き、#1021 では別実装で成功したと報告している。スライドでは、手順と責任の分担だけにとどめ、成功の数字は使わない（#1021 の 382枚、7,700円などは、話すなら hfu の言葉で）。 https://github.com/yuiseki/dji-waypoints-hitl
 
 #### dwg7/dorayaki
-> 11分（15:52–16:03）
 
-- A map tile holds one height per place. It cannot hold a bridge and the road under it.
-- Dorayaki keeps the usual tile address (z/x/y) and puts 3D points (Gaussian splats: points drawn as soft dots) inside each tile.
-- A real example: the Kawazu loop bridge and the valley below it, from about 476 million points, became one 83 MB file. You can see it from above and from below in a browser.
-- I started by following a method that Kenji Yoshida showed me (#1030).
-- It is an experiment, not a standard.
-- Not yet known: how it works on a wide area and on small PCs.
+> 10分（6枚）。**生きているプロジェクト。** dorayaki セッションとの相談（`docs/dorayaki-consult-2026-11-23.md`）による。
 
-> スライド案（3枚）: ① 地図タイルは、1つの場所に高さ1つしか持てない。橋と下の道路は入らない（作図） ② 画面: `dorayaki-kawazu.jpg`（川津ループ橋と谷。上からも下からも見える。ライブで見せる案も） ③ 数字とまだ分からないこと
+1. A bridge, and the road under it (WHAT IS MISSING)
+   - A map tile holds one height per place. It cannot hold a bridge and the road under it.
+   - Dorayaki keeps the usual tile address (zoom / x / y) and puts 3D points inside each tile. (Gaussian splats: points drawn as soft dots.)
+   - It is an experiment, not a standard.
+2. Screen: the Kawazu loop bridge and the valley below (`assets/screens/dorayaki-kawazu.jpg`)
+3. Screen: Sasebo — a town and its wooded hills, as a 3D aerial photo（`assets/screens/dorayaki-sasebo.jpg`。**公開済み**、2026-11-23）
+   - URL: https://dwg7.unopengis.org/dorayaki/?fixture=sasebo#map=16.4/33.1768/129.7215/-30/62（短い形は、木の多い斜面にズームインして始まるので、長い形を勧める。スライドの画像に、リンクを付けた）
+   - 出典: 長崎県「オープンナガサキ」の3次元点群（航空レーザ測量を統合。CC BY 4.0）。佐世保駅周辺と、南隣の港に面するメッシュの2枚（約1.5 km²、約1,380万点）→ 約614万のスプラット、51タイル、PMTiles 1本で73.7 MB。背景は河津と同じダーク地図。
+   - 河津との違い: 車載計測は無く、航空レーザだけ（約10点/m²）。分類は全点「未分類」。色は本物の RGB。
+4. Screen: tilt the view — the walls of buildings appear. Elevation tiles cannot show them.（`assets/screens/dorayaki-sasebo-facades.jpg`、1600×900 に撮り直し済み。視点 `#map=17.6/33.1732/129.7209/-30/62`。橋の下面の代わり。測量職員に分かりやすい点）
+5. A living project (WHO / OLD)
+   - First commit: 12 November 2026. By 23 November: 22 experiments.
+   - I started by following a method that Kenji Yoshida showed me.
+   - Who uses it? Today, one person. It is an experiment.
+   - Now: Sasebo, from the 3D point cloud of Nagasaki Prefecture. About 1.5 km², 74 MB. Published on 23 November.
+6. What for, what is missing, what is next (FOR / MISSING)
+   - What for? To publish point clouds like map tiles. To show what elevation tiles cannot. To view them in a browser, with no 3D server.
+   - What is missing? It is not a standard. Wide areas and small PCs are not tested. Some roofs and parking lots are merged into flat discs. It is for looking, not a survey product: its accuracy is not evaluated.
+   - Next (dorayaki セッションの計画): extend Sasebo with more meshes, and tune it (hfu が講義後に行う予定); make wide areas buildable, and viewable on small PCs。「未検証」と、そのまま言ってよい。
+   - 講義後に、佐世保の見た目が変わる可能性がある（URL は変わらない）。
 
-> 確認（Claude）: 数字（476 million points、83 MB）は README のまま。「Kenji Yoshida さんの方法の模倣から始めた」は #1031 の hfu のコメントの内容。https://dwg7.unopengis.org/dorayaki/
+> 橋の下面は、デモのカメラが地面の下に入れない作りで、撮れない可能性がある。撮れなければ、11/21 の画面を使う。11/25 までに、URL や仕組みを変える予定はない（背景地図の見た目が、河津と同じダーク地図に揃う可能性はある）。
 
 #### kenjiyoshidahome2026-bit/ortho-earth
 > 11分（16:03–16:14）

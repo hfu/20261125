@@ -27,6 +27,10 @@
 | ferspas-case3-water-balance.jpg | https://dwg7.unopengis.org/ferspas-html-demo/Case3-WaterBalance-4-14-5/ | 同上（水収支）。日本語。数値の帯（+426mm など）は、切り出して使える |
 | ax-asahikawa-snow-routes.jpg | AX セッション（hfu の別セッション）から提供（2026-11-21、hfu の指示:「002だけ渡す」）。元: hfu/ax の作業ブランチ docs/snow-asahikawa/screenshot-002-terrain.jpg | 旭川市街西側。除雪路線網: 旭川市オープンデータ（CC BY 2.1 JP、hfu 加工）。陰影起伏: 国土地理院標高タイル。背景: bvmap-koicha-starlight（国土地理院最適化ベクトルタイルから。dwg7 の活動で、国土地理院の公式な製品ではない）。国土地理院、旭川市の公式事業ではない。参加・支持を示すものではない。**路線網図であって、実際の除雪実施状況ではない。陰影起伏は、積雪の観測ではない。** 凡例は日本語（英語版を AX 側に依頼済み）。市のデータの再配布条件は、AX 側で確認中 |
 | ax-asahikawa-snow-routes-en.jpg | AX セッションから提供（2026-11-21）。上の日本語凡例版と同じ範囲で、凡例とクレジット欄を英語にしたもの | 凡例の区分名の英訳（Trunk road など）は、AX 側の仮訳で、市の公式英語ではない。地図の地名と、画面下端の帰属表示は日本語のまま（下端を切るか、英語の字幕で補う）。市のデータ（CC BY 2.1 JP）: 「データ利用に旭川市の承諾は不要」、禁止事項は「市が作成したかのように見せること」（AX 側の読み取り、法的助言ではない）。**未確認:** 除雪路線網図は、市のページで、都市計画基本図と数値地図25000を用いて作成とされる。測量成果の使用承認が要るかは、未判断（hfu が判断。確認先: 旭川市 行財政改革部 行政DX課）。規約は「試行版」で、予告なく変わりうる。取得日 2026-11-21 |
+| map-japan-four-places.jpg | 作図（Claude、2026-11-23）。陸地: Natural Earth の ne_50m_land（パブリックドメイン）。4つの印と英語のラベルは作図 | 印の位置は、旭川（43.77N, 142.36E）、東京（35.68N, 139.77E）、河津（34.79N, 138.94E）、佐世保（33.18N, 129.72E）。塗り分けなし（北方領土の扱いに配慮して、北海道を塗らない） |
+| dorayaki-sasebo.jpg | https://dwg7.unopengis.org/dorayaki/?fixture=sasebo#map=16.4/33.1768/129.7215/-30/62（2026-11-23 撮影、Claude。操作パネルを畳んだ状態） | 点群: 長崎県 オープンナガサキ（CC BY 4.0）を加工して作成。国土地理院ベクトルタイル。Processed with Mapterhorn。背景地図に、日本の地図記号（寺院 卍 など）が写っている |
+| dorayaki-sasebo-facades.jpg | https://dwg7.unopengis.org/dorayaki/?fixture=sasebo#map=17.6/33.1732/129.7209/-30/62（2026-11-23 撮影、Claude。視点は dorayaki セッションの案内）。操作パネルを畳んだ状態、1600×900 | 同上 |
+| dorayaki-sasebo-wide-small.jpg | dorayaki セッションから提供（予備）。市街地の全景、800×450 | 同上 |
 
 注意:
 - 画面は、撮影した時点のもの。ライブのページなので、後で見ると変わる。
